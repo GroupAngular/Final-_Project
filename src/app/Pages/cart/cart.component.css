@@ -1,0 +1,18 @@
+.bgCart-color{background-color: #A0B9BF;}
+
+.element {
+    /* Underlying values */
+    transform: translateY(20px);
+    animation: fade-in 0.25s ease-in;
+    
+    /* Adds the underlying value to */
+    /* the current effect value */
+    animation-composition: add;
+  }
+  
+  @keyframes fade-in {
+    0% {
+      /* Effect values */
+      transform: translateY(50px);
+    }
+  }
