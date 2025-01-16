@@ -1,0 +1,117 @@
+/* Rounded images for team members */
+.team-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #d1c4a7;
+    transition: transform 0.3s ease;
+  }
+  
+  .team-img:hover {
+    transform: scale(1.1);
+    border-color: #6f4e37;
+  }
+  
+  /* Cards styling for team members */
+  .team-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .team-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+
+  /*3D effects start*/
+  /* 3D Effect on hover for team cards */
+.team-card {
+    perspective: 1000px;
+    transition: transform 0.5s, box-shadow 0.5s;
+  }
+  
+  .team-card:hover {
+    transform: rotateY(15deg) translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Rounded images for team members */
+  .team-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #d1c4a7;
+    transition: transform 0.3s ease;
+  }
+  
+  .team-img:hover {
+    transform: scale(1.2);
+    border-color: #6f4e37;
+  }
+  
+  /* Title colors */
+  .text-brown {
+    color: #6f4e37;
+  }
+
+  
+
+  /* Goals and mession start */
+  /* Goals and Missions Section */
+.goals-missions-section {
+  background-color: #f8f9fa;
+}
+
+.goals-missions-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #5c3a21; /* Wood-like color */
+  margin-bottom: 30px;
+}
+
+.carousel-card {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.carousel-card:hover {
+  transform: rotateY(180deg);
+}
+
+.carousel-card-front,
+.carousel-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  background-color: white;
+}
+
+.carousel-card-back {
+  background-color: #8b5d33; /* Wood-like color */
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.carousel-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.carousel-card p {
+  font-size: 1.1rem;
+  text-align: center;
+}
+  /* Goals and mession end */
+  /*3D effects End*/
