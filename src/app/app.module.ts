@@ -15,7 +15,9 @@ import { FAQComponent } from './Pages/faq/faq.component';
 import { TermsComponent } from './Pages/terms/terms.component';
 import { PrivacyComponent } from './Pages/privacy/privacy.component';
 import { WishlistComponent } from './Pages/wishlist/wishlist.component';
-import { CheckoutComponent } from './Pages/checkout/checkout.component'; // Import FormsModule
+import { CheckoutComponent } from './Pages/checkout/checkout.component';
+import { TeamMemberCardComponent } from './components/cards/team-member-card/team-member-card.component';
+ // Import FormsModule
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { CheckoutComponent } from './Pages/checkout/checkout.component'; // Impo
     TermsComponent,
     PrivacyComponent,
     WishlistComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    TeamMemberCardComponent
   ],
   imports: [
     BrowserModule,
