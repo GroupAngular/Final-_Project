@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './Shared/nav-bar/nav-bar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './Pages/home/home.component';
 import { ShopComponent } from './Pages/shop/shop.component';
 import { CartComponent } from './Pages/cart/cart.component';
@@ -40,7 +40,8 @@ import { TeamMemberCardComponent } from './components/cards/team-member-card/tea
     BrowserModule,
     
     AppRoutingModule,    
-    FormsModule // Add FormsModule to imports
+    FormsModule, // Add FormsModule to imports
+    ReactiveFormsModule
 
   ],
   providers: [],
