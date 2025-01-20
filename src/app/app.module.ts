@@ -17,6 +17,7 @@ import { PrivacyComponent } from './Pages/privacy/privacy.component';
 import { WishlistComponent } from './Pages/wishlist/wishlist.component';
 import { CheckoutComponent } from './Pages/checkout/checkout.component';
 import { TeamMemberCardComponent } from './components/cards/team-member-card/team-member-card.component';
+import { ProductCardComponent } from './components/cards/product-card/product-card.component';
  // Import FormsModule
 
 @NgModule({
@@ -34,7 +35,8 @@ import { TeamMemberCardComponent } from './components/cards/team-member-card/tea
     PrivacyComponent,
     WishlistComponent,
     CheckoutComponent,
-    TeamMemberCardComponent
+    TeamMemberCardComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,

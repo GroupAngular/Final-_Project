@@ -1,1 +1,55 @@
-<p>home works!</p>
+
+<div class="container">
+  
+    <!-- Hero Section -->
+    <header class="position-relative text-center text-white d-flex align-items-center justify-content-center">
+      <!-- Overlay -->
+      <div class="overlay position-absolute"></div>
+    
+      <!-- Hero Content -->
+      <div class="hero-section container">
+        <h1 class="display-4 fw-bold">Modern Furniture for Every Room</h1>
+        <p class="lead">Discover stylish furniture to elevate your space.</p>
+        <a routerLink="/Home" class="btn btn-warning btn-lg mt-3">Shop Now</a>
+      </div>
+    </header>
+
+
+    <!-- ===============Products card start=================== -->
+    <section class=" mt-5">
+      <div class="row d-flex justify-content-center ">
+        <div
+          class="col-12 col-md-6 col-xl-4 d-flex justify-content-center align-items-center flex-wrap"
+          *ngFor="let singleProduct of productsComponents"
+        >
+          <app-product-card
+            [imageSrc]="singleProduct.imageSrc"
+            [productName]="singleProduct.productName"
+          ></app-product-card>
+        </div>
+      </div>
+    </section>
+    <!-- ===============Products card end=================== -->
+  
+    <!-- Products Section -->
+    <section id="products" class="py-5">
+      <div class="container">
+        <h3 class="text-center mb-4">Shop Our Products</h3>
+        <div class="row g-4">
+          <!-- Product Card -->
+          <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let product of products">
+            <div class="card h-100">
+              <img [src]="product.image" class="card-img-top" [alt]="product.name" />
+              <div class="card-body text-center">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text text-muted">{{ product.price | currency }}</p>
+                <a routerLink="/cart" class="btn  btn-sm  btn-warning">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+  </div>
+
