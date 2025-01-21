@@ -34,7 +34,7 @@ export class ContactUsComponent {
   onSubmit(): void {
     if (this.contactForm.valid) {
       console.log('Form Submitted', this.contactForm.value);
-      // Add your form submission logic here
+  
     } else {
       this.contactForm.markAllAsTouched();
     }
