@@ -1,51 +1,29 @@
+<header class="position-relative text-center text-white d-flex align-items-center justify-content-center">
+  <!-- Overlay -->
+  <div class="overlay position-absolute"></div>
 
+  <!-- Hero Content -->
+  <div class="hero-section container">
+    <h1 class="display-4 fw-bold">Modern Furniture for Every Room</h1>
+    <p class="lead">Discover stylish furniture to elevate your space.</p>
+    <a routerLink="/Home" class="btn btn-warning btn-lg mt-3">Shop Now</a>
+  </div>
+</header>
+
+
+<!-- ==================================================== -->
+<!-- ===========================header end========================= -->
+<!-- ==================================================== -->
+<!-- ==================================================== -->
 <main class="container ">
-    <!-- About Section -->
-    <section id="about" class="text-center mb-5">
-      <header>
-        <h1 class="display-4 text-brown animate-title">About Our Store</h1>
-      </header>
-      <p class="lead text-muted animate-text">
-        Welcome to our store! We specialize in premium-quality handcrafted wooden
-        furniture that brings warmth and elegance to your home.
-      </p>
-    </section>
+   
   
     
     <!-- ===================================================================== -->
     <!-- ===================================================================== -->
     <!-- ===================================================================== -->
      
-    <section class="why-choose-us">
-      <div class="container">
-        <div class="row align-items-center">
-          <!-- Left: Image -->
-          <div class="col-md-6 mb-4 mb-md-0">
-            <img src="images/cat.jpg" alt="Why Choose Us">
-          </div>
-          <!-- Right: Content -->
-          <div class="col-md-6">
-            <h2>Why Choose Us?</h2>
-            <p>
-              <i class="bi bi-award icon"></i>
-              High Quality: We provide top-notch services and products that meet the highest standards of quality.
-            </p>
-            <p>
-              <i class="bi bi-people icon"></i>
-              Professional Team: Our team is composed of experienced professionals who are passionate about what they do.
-            </p>
-            <p>
-              <i class="bi bi-clock-history icon"></i>
-              On-Time Delivery: We value your time and ensure that every project is delivered on schedule.
-            </p>
-            <p>
-              <i class="bi bi-shield-check icon"></i>
-              Trustworthy: We build long-term relationships by ensuring reliability and transparency in all our dealings.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    
     <!-- ===================================================================== -->
     <!-- ===================================================================== -->
   
@@ -53,10 +31,10 @@
     
 
     <section class="container-fluid">
-      <h1 class="text-center mb-4">Team Players</h1>
+      <h1 class="text-center mb-4   primary-color">Our Team</h1>
       <div class="row d-flex justify-content-center ">
         <div
-          class="col-md-4 d-flex justify-content-center align-items-center flex-wrap"
+          class="col-12  col-md-6 col-xl-4 d-flex justify-content-center align-items-center flex-wrap"
           *ngFor="let card of cards"
         >
           <app-team-member-card
@@ -83,65 +61,75 @@
     <!-- ======================================================================================= -->
     <!-- ======================================================================================= -->
   
-    <!-- Customer Opinions Section -->
-    <section id="customer-opinions" class="text-center">
-      <header>
-        <h2 class="text-brown">What Our Customers Say</h2>
-      </header>
-  
-      <!-- Bootstrap Carousel -->
-      <div id="customerCarousel" class="carousel slide mt-4" data-bs-ride="carousel" data-bs-interval="4000">
-        <!-- Indicators -->
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#customerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#customerCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#customerCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-  
-        <!-- Carousel Items -->
-        <div class="carousel-inner">
-          <!-- Opinion 1 -->
-          <div class="carousel-item active">
-            <blockquote class="blockquote text-center">
-              <p class="mb-4">
-                "Absolutely love the craftsmanship of the furniture I purchased!
-                The quality exceeded my expectations. Highly recommended!"
-              </p>
-              <footer class="blockquote-footer">A Happy Customer</footer>
-            </blockquote>
-          </div>
-          <!-- Opinion 2 -->
-          <div class="carousel-item">
-            <blockquote class="blockquote text-center">
-              <p class="mb-4">
-                "Excellent service and delivery. The team was very professional
-                and ensured my complete satisfaction."
-              </p>
-              <footer class="blockquote-footer">Another Happy Customer</footer>
-            </blockquote>
-          </div>
-          <!-- Opinion 3 -->
-          <div class="carousel-item">
-            <blockquote class="blockquote text-center">
-              <p class="mb-4">
-                "The wooden pieces from this store are stunning! They’ve made my
-                home feel so much warmer and inviting."
-              </p>
-              <footer class="blockquote-footer">Yet Another Happy Customer</footer>
-            </blockquote>
-          </div>
-        </div>
-  
-        <!-- Carousel Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#customerCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#customerCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </section>
+   
   </main>
+
+
+
+  <!-- ======================================================================================================= -->
+  <!-- ======================================================================================================= -->
+  <!-- ======================================================================================================= -->
+  <!-- ======================================================================================================= -->
+  <!-- ======================================================================================================= -->
+
+   <!-- Customer Opinions Section -->
+   <section id="customer-opinions" class="text-center mt-5 bg-warning pt-5 mt-5">
+    <div>
+      <h2 class="primary-color">What Our Customers Say</h2>
+    </div>
+
+    <!-- Bootstrap Carousel -->
+    <div id="customerCarousel" class="carousel slide mt-4" data-bs-ride="carousel" data-bs-interval="4000">
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#customerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#customerCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#customerCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <!-- Carousel Items -->
+      <div class="carousel-inner">
+        <!-- Opinion 1 -->
+        <div class="carousel-item active">
+          <blockquote class="blockquote text-center">
+            <p class="mb-4">
+              "Absolutely love the craftsmanship of the furniture I purchased!
+              The quality exceeded my expectations. Highly recommended!"
+            </p>
+            <footer class="blockquote-footer">A Happy Customer</footer>
+          </blockquote>
+        </div>
+        <!-- Opinion 2 -->
+        <div class="carousel-item">
+          <blockquote class="blockquote text-center">
+            <p class="mb-4">
+              "Excellent service and delivery. The team was very professional
+              and ensured my complete satisfaction."
+            </p>
+            <footer class="blockquote-footer">Another Happy Customer</footer>
+          </blockquote>
+        </div>
+        <!-- Opinion 3 -->
+        <div class="carousel-item">
+          <blockquote class="blockquote text-center">
+            <p class="mb-4">
+              "The wooden pieces from this store are stunning! They've made my
+              home feel so much warmer and inviting."
+            </p>
+            <footer class="blockquote-footer">Yet Another Happy Customer</footer>
+          </blockquote>
+        </div>
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#customerCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#customerCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
   
