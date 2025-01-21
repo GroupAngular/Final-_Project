@@ -2,8 +2,8 @@
 .header {
     position: relative;
     width: 100%;
-    height: 400px; /* Adjust height as needed */
-    background-image: url('/images/Contact-us.webp'); /* Correct path */
+    height: 400px; 
+    background-image: url('/images/Contact-us.webp'); 
     background-size: cover;
     background-position: center;
     display: flex;
@@ -20,7 +20,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(59, 93, 80, 0.5); /* Overlay color using #3B5D50 */
+    background: rgba(59, 93, 80, 0.5); 
   }
   
   /* Title Styles */
@@ -53,26 +53,26 @@
   
   /* Contact Section Styles */
   .contact-section {
-    background-color: #A0B9BF; /* Light background color using #A0B9BF */
+    background-color: #A0B9BF; 
     padding: 60px 0;
   }
   
   .contact-section h2 {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #3B5D50; /* Using #3B5D50 */
+    color: #3B5D50; 
     margin-bottom: 20px;
   }
   
   .contact-section p {
     font-size: 1.25rem;
-    color: #141516; /* Using #949BA0 */
+    color: #141516; 
   }
   
   /* Info Box Styles */
   .info-box {
     background-color: white;
-    border: 2px solid #3B5D50; /* Using #3B5D50 */
+    border: 2px solid #3B5D50; 
     border-radius: 15px;
     padding: 20px;
     text-align: center;
@@ -85,20 +85,20 @@
   }
   
   .info-box .icon {
-    color: #3B5D50; /* Using #3B5D50 */
+    color: #3B5D50; 
     font-size: 2rem;
     margin-bottom: 15px;
   }
   
   .info-box h4 {
     font-size: 1.5rem;
-    color: #3B5D50; /* Using #3B5D50 */
+    color: #3B5D50; 
     margin-bottom: 10px;
   }
   
   .info-box p {
     font-size: 1rem;
-    color: #949BA0; /* Using #949BA0 */
+    color: #949BA0;
   }
   
   /* Animations */
@@ -167,7 +167,7 @@
   }
   
   .arrow-link:hover {
-    color: #3B5D50; /* Using #3B5D50 */
+    color: #3B5D50;
   }
   
   /* Bounce Animation */
@@ -185,14 +185,14 @@
   
   /* Form Section Styles */
   .form-section {
-    background-color: #A0B9BF; /* Light background color using #A0B9BF */
+    background-color: #A0B9BF; 
     padding: 60px 0;
   }
   
   /* Form Card */
   .form-card {
     background-color: white;
-    border: 2px solid #3B5D50; /* Using #3B5D50 */
+    border: 2px solid #3B5D50; 
     border-radius: 15px;
     padding: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -208,7 +208,7 @@
   .form-card h2 {
     font-size: 2rem;
     font-weight: bold;
-    color: #3B5D50; /* Using #3B5D50 */
+    color: #3B5D50; 
     margin-bottom: 20px;
   }
   
@@ -222,14 +222,14 @@
   }
   
   .custom-input:focus, .custom-textarea:focus {
-    border-color: #3B5D50; /* Using #3B5D50 */
-    box-shadow: 0 0 8px rgba(59, 93, 80, 0.3); /* Using #3B5D50 */
+    border-color: #3B5D50; 
+    box-shadow: 0 0 8px rgba(59, 93, 80, 0.3); 
     outline: none;
   }
   
   /* Custom Button */
   .btn-custom {
-    background-color: #3B5D50; /* Using #3B5D50 */
+    background-color: #3B5D50;
     color: white;
     border: none;
     border-radius: 10px;
@@ -239,7 +239,7 @@
   }
   
   .btn-custom:hover {
-    background-color: #2A443A; /* Darker shade of #3B5D50 */
+    background-color: #2A443A; 
     transform: translateY(-3px);
   }
   

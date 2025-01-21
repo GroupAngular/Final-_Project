@@ -17,6 +17,7 @@ import { PrivacyComponent } from './Pages/privacy/privacy.component';
 import { WishlistComponent } from './Pages/wishlist/wishlist.component';
 import { CheckoutComponent } from './Pages/checkout/checkout.component';
 import { TeamMemberCardComponent } from './components/cards/team-member-card/team-member-card.component';
+import { CartService } from './services/cart.service';
  // Import FormsModule
 
 @NgModule({
@@ -44,7 +45,7 @@ import { TeamMemberCardComponent } from './components/cards/team-member-card/tea
     ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
