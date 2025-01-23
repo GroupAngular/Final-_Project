@@ -19,6 +19,7 @@ import { CheckoutComponent } from './Pages/checkout/checkout.component';
 import { TeamMemberCardComponent } from './components/cards/team-member-card/team-member-card.component';
 import { ProductCardComponent } from './components/cards/product-card/product-card.component';
 import { CartService } from './services/cart.service';
+import { ConfirmationComponent } from './Pages/confirmation/confirmation.component';
  // Import FormsModule
 
 @NgModule({
@@ -37,7 +38,8 @@ import { CartService } from './services/cart.service';
     WishlistComponent,
     CheckoutComponent,
     TeamMemberCardComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,
