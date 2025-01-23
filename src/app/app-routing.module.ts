@@ -11,6 +11,7 @@ import { ShopComponent } from './Pages/shop/shop.component';
 import { UserComponent } from './Pages/user/user.component';
 import { TermsComponent } from './Pages/terms/terms.component';
 import { CheckoutComponent } from './Pages/checkout/checkout.component';
+import { ConfirmationComponent } from './Pages/confirmation/confirmation.component';
 
 const routes: Routes = [
 
@@ -26,6 +27,8 @@ const routes: Routes = [
 ,  {path:"terms",component:TermsComponent}
 
 ,  {path:"wishlist",component:WishlistComponent}
+,
+{path:"confirmation",component:ConfirmationComponent}
 
 ];
 
