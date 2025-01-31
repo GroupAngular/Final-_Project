@@ -1,0 +1,105 @@
+<app-bg-section *ngFor="let p of InfoOfSectionBGProduct" [bgSectionInfo]="p"></app-bg-section>
+
+
+
+<section class="my-5">
+    <div class="container">
+
+
+        <div class="row my-5">
+            <div class="col-3 border-end ">
+
+
+                <div class="my-3 rounded-0">
+                    <h4 class="fw-bold">
+                        Filter by price
+
+                    </h4>
+                    <div>
+                        <input type="range" class="form-range w-75" id="customRange1">
+
+                        <ul class="d-flex list-unstyled justify-content-between align-items-center">
+                            <li>
+                                <span class="text-secondary ">Price :</span><span class="me-2">$200</span> <span
+                                    class="">$300</span>
+                            </li>
+
+                        </ul>
+                        <button class="btn bg-color fw-bold text-white text-center" type="button"
+                            id="apply-coupon-button">Filter</button>
+                    </div>
+                </div>
+
+                <div class=" mb-3 ">
+                    <h4 class="fw-bold">
+
+                        Product categories
+
+                    </h4>
+
+                    <app-categories *ngFor="let cat of categories" [category]="cat"></app-categories>
+                </div>
+
+
+
+                <div class="mb-3">
+                    <h4 class="fw-bold">
+
+                        Latest products
+
+                    </h4>
+
+                    <app-latest-product *ngFor="let latest of latestProduct" [latestPro]='latest'></app-latest-product>
+
+
+                </div>
+
+                <div class="mb-3">
+                    <h4 class="fw-bold">
+
+                        Product Tags
+
+                    </h4>
+
+                    <div class="row">
+                        <div class="col-3" *ngFor="let t of tags">
+                            <app-tags [TAGS]="t"></app-tags>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <div class="col-9">
+                <div class="row my-5">
+                    <div class="col-9">
+                        <input type="search" name="" class="form-control" id="" placeholder="search...">
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="container">
+
+
+                        <div class="row flex-wrap">
+                            <div class="col-4" *ngFor="let product of products  ">
+
+                                <app-shop-product-cards [getProducts]="product"></app-shop-product-cards>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+</section>

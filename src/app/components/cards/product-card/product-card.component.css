@@ -1,0 +1,16 @@
+
+
+.card-container{
+    border: 1px solid rgba(128, 128, 128, 0.386) ;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+
+.font-bold-big{
+    font-size: 1.7rem;
+    font-weight: bolder;
+}
