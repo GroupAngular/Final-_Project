@@ -20,6 +20,7 @@ import { TeamMemberCardComponent } from './components/cards/team-member-card/tea
 import { ProductCardComponent } from './components/cards/product-card/product-card.component';
 import { CartService } from './services/cart.service';
 import { ConfirmationComponent } from './Pages/confirmation/confirmation.component';
+import { ReturnComponent } from './Pages/return/return.component';
  // Import FormsModule
 
 @NgModule({
@@ -39,7 +40,8 @@ import { ConfirmationComponent } from './Pages/confirmation/confirmation.compone
     CheckoutComponent,
     TeamMemberCardComponent,
     ProductCardComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    ReturnComponent
   ],
   imports: [
     BrowserModule,
