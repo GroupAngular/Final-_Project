@@ -29,7 +29,6 @@ import { CommonModule } from '@angular/common';
 import { ShopCardsComponent } from './components/cards/shop-cards/shop-cards.component';
 import { provideHttpClient } from '@angular/common/http';
 import { ShopProductComponent } from './Pages/shop-product/shop-product.component';
-import { ShopProductDetailsComponent } from './Pages/shop-product-details/shop-product-details.component';
 import { BGSectionComponent } from './Shared/bg-section/bg-section.component';
 import { CarouselComponent } from './Shared/carousel/carousel.component';
 import { LatestProductComponent } from './components/latest-product/latest-product.component';
@@ -62,7 +61,6 @@ import { FormCommentComponent } from './components/form-comment/form-comment.com
     ConfirmationComponent,
     ShopCardsComponent,
     ShopProductComponent,
-    ShopProductDetailsComponent,
     BGSectionComponent,
     CarouselComponent,
     LatestProductComponent,

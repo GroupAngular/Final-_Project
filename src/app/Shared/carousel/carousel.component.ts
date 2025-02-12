@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-carousel',
@@ -9,14 +10,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class CarouselComponent {
 // <!-- carousel components.ts -->
-
+constructor(private global:ProductsService){}
 
   @Input() carouselSection: any[] = [];
   @Output() productSelected = new EventEmitter<any>();
-
-  selectedProductId: string | null = null; // To track the currently selected product's id
-
-
+  selectedProductId: string | null = null;
+  // To track the currently selected product's id
   onImageClick(product: any) {
     // If the clicked product is already selected, deselect it; otherwise, select it
     if (this.selectedProductId === product.id) {

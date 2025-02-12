@@ -1,1 +1,83 @@
-<p>wishlist works!</p>
+<app-bg-section *ngFor="let p of InfoOfSectionBGSingleProductDetails" [bgSectionInfo]="p"></app-bg-section>
+
+<section>
+    <div class="container d-flex align-items-center justify-content-center">
+        <div class="row col-xl-10 col-xxl-10 col-lg-10 col-sm-12 col-md-12 my-5">
+
+
+
+
+            <div class="card mb-3  shadow-sm element">
+
+                <div class="card-body ">
+                    <table class="table align-items-center">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col" class=""></th>
+                                <th scope="col" class="">Product</th>
+                                <th scope="col" class="">Product Name</th>
+
+                                <th scope="col" class="">Price</th>
+                                <th scope="col" class="">Stock Status</th>
+                                <th scope="col" class="">Quantity</th>
+                                <th scope="col" class=""></th>
+
+
+                            </tr>
+                        </thead>
+                        <!-- <tbody *ngIf="wishlist.length === 0"> -->
+                            <tbody>
+                            <!-- <p>Your wishlist is empty.</p> -->
+                            <tr class="align-items-center justify-content-center" *ngFor="let product of wishlist">
+                                <th scope="row"> <a href="#"><i class="fa-solid fa-trash-can text-dark"
+                                            style="font-size: 12px;"></i></a>
+                                </th>
+                                <th scope="col-12 d-flex align-items-center">
+                                        <img src="/images/chair.jpg" class="rounded img-thumbnail" style="width: 70px;"
+                                            alt="Chair Image">
+
+                                </th>
+                                <th scope="col" class="">{{product.name}}</th>
+
+                                <th scope="col">$230</th>
+                                <th scope="col">Stock Status</th>
+                                <th scope="col d-flex w-25">
+
+                                    <div class="input-group input-group-sm w-auto d-inline-flex justify-content-center shadow-sm ">
+                                        <button class="btn  btn-sm" type="button" id="btn-decrease"  (click)="decreaseQuantity()">-</button>
+                                        <input type="text" class="form-control text-center border-0" id="quantity" [value]="quantity"  style="width: 50px;">
+                                        <button class="btn  btn-sm" type="button" id="btn-increase" (click)="increaseQuantity()">+</button>
+                                      </div>
+                                </th>
+                                <th scope="col">
+                                    <a href="#"> <i class="fa-solid fa-cart-plus fs-5 text-dark "
+                                            routerLink="/cart"></i>
+                                    </a>
+                                </th>
+                                <th scope="col">
+                                    <a> <i class="fa-solid fa-cart-plus fs-5 text-dark "
+                                            routerLink="/cart"></i>
+                                    </a>
+                                </th>
+
+                            </tr>
+                         
+
+                        </tbody>
+                    </table>
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+    </div>
+</section>

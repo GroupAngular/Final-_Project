@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-shop-product',
@@ -15,20 +16,29 @@ export class ShopProductComponent {
     title:'SHOP',
     subTitle1:'Home',
     subTitle2:'Shop',
-    subTitle3:'Product'
+    subTitle3:'Shop Product',
+
 
   }]
-  products:any=[]
-  constructor(public global:ProductsService){}
+
+
+  products:any[]=[]
+  
+  constructor(public global:ProductsService,private Activate: ActivatedRoute){}
+  
+  
   ngOnInit(){
-    console.log(this.global.getProducts().subscribe(result=>{console.log(result)
-
-
-      this.products=result.products
-    }))
-
-
+  let ProductId=this.Activate.snapshot.paramMap.get("idProduct")
+  this.global.getProduct(ProductId).subscribe(result=>{console.log(result)
+    this.products=result
+    console.log("productspage",this.products)
+     })
   }
+  
+ 
+  
+  
+  
   latestProduct=[
     {image:"images/Beds.jpg",title:'title 1',price:'$2000',offer:'5%'},
     {image:"images/Bedroom.jpg",title:'title 2',price:'$2000',offer:'5%'},

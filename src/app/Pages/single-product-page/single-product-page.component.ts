@@ -10,19 +10,13 @@ import { ProductsService } from '../../services/products.service';
   styleUrl: './single-product-page.component.css'
 })
 export class SingleProductPageComponent {
-
-
-
-
-
-
-
-  InfoOfSectionBGSingleProductDetails=[{
+InfoOfSectionBGSingleProductDeta=[{
     image:'images/Shop_bg.jpg',
     title:'SHOP',
     subTitle1:'Home',
     subTitle2:'Shop',
-    subTitle3:'Product Details'
+    subTitle3:'Shop Product',
+    subTitle4:'Shop Product Details',
 
   }]
 
@@ -43,32 +37,41 @@ decreaseQuantity(): void {
 
   onCommentAdded(newComment: any) {
     console.log('New comment added:', newComment);
-    // يمكنك تنفيذ أي منطق إضافي هنا
   }
 
   // to get id from url
   constructor(private Activate: ActivatedRoute,private global:ProductsService){}
-  productData:any 
-  latestProd:any []=[]
+  productData:any =[]
+  relatedProducts: any[] = [];
+
   ngOnInit() {
 
-    let produtId=this.Activate.snapshot.paramMap.get("id")
+    let produtID=this.Activate.snapshot.paramMap.get("id")
 
-    this.Activate.paramMap.subscribe(param=>{this.global.getDetailsProduct(param.get('id')).subscribe(res=>{
+    // this.Activate.paramMap.subscribe(param=>{this.global.getProduct(param.get('id')).subscribe(res=>{
 
 
-      this.productData=res
+    //   this.productData=res
       
-    })})
-    this.global.getProducts().subscribe(result=>{
-      console.log(result)
-      this.latestProd=result.products
-    
-      console.log("products=",this.latestProd)
-    })
-    
-  }
+    // })})
 
+    this.global.getProductDetails(produtID).subscribe(result=>{
+      console.log("result",result)
+      this.productData=result
+
+
+    })
+
+    this.global.getAllProducts().subscribe(res=>{this.relatedProducts=res})
+    }
+    
+  
+
+
+  handleImageError(event: any): void {
+    // Access the image element and set the fallback image
+    event.target.src = "images/AccentArm Chairs.jpg"; // Provide the path to your fallback image here
+  }
   
   
 }

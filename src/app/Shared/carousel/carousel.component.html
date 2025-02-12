@@ -2,7 +2,8 @@
 
 <div class="position-absolute top-100 start-50 translate-middle w-100 d-flex justify-content-around Carouselstyle mb-5">
     <div class="container">
-      <p-carousel [value]="carouselSection" [numVisible]="4" [numScroll]="1" [circular]="false">
+     <div class="row">
+      <p-carousel [value]="carouselSection" [numVisible]="4" [numScroll]="1" [circular]="false" class="col-xl-12 col-xxl-12 col-lg-12 col-md-12 col-sm-12">
         
         <ng-template let-carousel pTemplate="item">
           <div class="product-item d-flex justify-content-around ">
@@ -16,5 +17,6 @@
           </div>
         </ng-template>
       </p-carousel>
+     </div>
     </div>
   </div>

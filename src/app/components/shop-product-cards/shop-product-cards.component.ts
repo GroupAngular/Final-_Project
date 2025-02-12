@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-shop-product-cards',
@@ -11,13 +12,14 @@ import { ProductsService } from '../../services/products.service';
 export class ShopProductCardsComponent {
 @Input() getProducts:any
   products:any=[]
-  constructor(public global:ProductsService){}
+  constructor(public global:ProductsService,private Activate: ActivatedRoute){}
   ngOnInit(){
-    console.log(this.global.getProducts().subscribe(result=>{console.log(result)
 
-
-      this.products=result.products
-    }))}
+    let ProductId=this.Activate.snapshot.paramMap.get("idProduct")
+    this.global.getProductDetails(ProductId).subscribe(result=>{console.log(result)
+      this.products=result
+       })
+   }
 
   userRating: number = 3; // Initial rating
 
@@ -47,5 +49,12 @@ export class ShopProductCardsComponent {
         this.quantity--;
       
     }
+
+
+
+
+  
+
+
 
 }

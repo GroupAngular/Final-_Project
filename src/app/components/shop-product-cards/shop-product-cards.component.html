@@ -1,63 +1,41 @@
 <div class="card shadow-sm rounded-0 my-3" style="width: 18rem; height: 22rem;">
-    <div class=" position-relative h-50">
-        <!-- (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" -->
-        <img [src]="getProducts.images" class="card-img-top rounded-0 w-100 h-100" alt="..." >
-
+    <div class=" position-relative h-50" >
+        <img [src]="getProducts.images[0]" class="card-img-top rounded-0 w-100 h-100" alt="..." >
     </div>
     <span class="badge text-bg-danger position-absolute top-0 start-0 ms-2 mt-2 rounded-0">Best
         Seller</span>
-
-       
-
     <div class="card-body">
         <div class="row">
-            <div class="col-8">
-                <h5 class="card-title fw-bold "  routerLink="/single-product-page/{{getProducts.id}}" style="cursor: pointer;">{{getProducts.title}}</h5>
+            <div class="col-lg-8 col-md-8 col-xxl-8 col-xl-8 col-sm-12">
+                <h5 class="card-title fw-bold "  routerLink="/single-product-page/{{getProducts.id}}" style="cursor: pointer;">{{getProducts.name}}</h5>
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-4 col-xxl-4 col-xl-4 col-sm-6">
                 <app-rating [maxRating]="5" [(currentRating)]="userRating" [isEditable]="true">
                 </app-rating>
-
             </div>
         </div>
         <p class="card-text text-secondary text-truncate description" style="font-size: 12px;">{{getProducts.description}}</p>
-        <div class="row">
-            <div class="col-4">
-
-                <ul class="d-flex list-unstyled  align-items-center">
-                    <li>
-                        <p class="fw-bold pe-2" style="font-size: 18px;">${{getProducts.price}}</p>
-
-
+        <div class="row align-items-center">
+            <div class="col-lg-4 col-md-3 col-xxl-4 col-xl-4 col-sm-3">
+                <ul class="d-flex list-unstyled align-items-center justify-content-between">
+                    <!-- First two items (aligned left) with no space between them -->
+                    <li class="d-flex me-5">
+                        <p class="fw-bold pe-2 mb-0" style="font-size: 18px;">${{getProducts.price}}</p>
+                        <p class="fw-bold text-secondary text-decoration-line-through mb-0" style="font-size: 14px;">%{{getProducts.discountPercentage}}</p>
                     </li>
-                    <li>
-                        <p class="fw-bold text-secondary text-decoration-line-through"
-                            style="font-size: 14px;">%{{getProducts.discountPercentage}}</p>
-
+                
+                    <!-- Last two items (aligned right) with space between them -->
+                    <li class="d-flex ms-5">
+                        <i class="fa-regular fa-heart fs-5 pe-1" routerLink="/wishlist" style="cursor: pointer;"></i>
+                        <i class="fa-solid fa-cart-plus fs-5 position-relative me-3" routerLink="/cart" style="cursor: pointer;"></i> <!-- Adds space between icons -->
                     </li>
                 </ul>
-
-            </div>
-            <div class="col-8">
-                <div class="row">
-                    <ul class="d-flex list-unstyled justify-content-end align-items-center">
-                        <li>     <i class="fa-regular fa-eye fs-5 me-1 "  data-bs-toggle="modal" 
-                            data-bs-target="#exampleModal" 
-                            style="cursor: pointer;"></i>
-                        </li>
-
-                        <li> <i class="fa-regular fa-heart fs-5 me-1 "></i>
-
-                        </li>
-                        <li> <i class="fa-solid fa-cart-plus fs-5 position-relative me-1 " routerLink="/cart" style="cursor: pointer;"></i></li>
-
-                        
-                    </ul>
-
-                </div>
-
+                
+                
+                
+                
             </div>
         </div>
-
+        
     </div>
 </div>

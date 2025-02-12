@@ -25,11 +25,8 @@ export class FormCommentComponent {
     if (this.newComment.comment && this.newComment.reviewerName && this.newComment.rating) {
       const newReview = { ...this.newComment, date: new Date().toISOString() };
       
-      // إضافة التعليق إلى المصفوفة
       this.comment.push(newReview);
-      this.toastr.success('Comment added successfully!', 'Success');
 
-      // إعادة تعيين الحقول
       this.newComment = {
         comment: '',
         reviewerName: '',

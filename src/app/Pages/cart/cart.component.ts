@@ -20,7 +20,13 @@ export class CartComponent {
       this.quantity--;
     
   }
+  InfoOfSectionBGSingleProductDeta=[{
+    image:'images/Shop_bg.jpg',
+    title:'SHOP',
+    subTitle1:'Home',
+    subTitle2:'Shop',
 
+  }]
 
 
 }

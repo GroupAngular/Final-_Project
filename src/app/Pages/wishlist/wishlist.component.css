@@ -1,0 +1,21 @@
+/* Custom styling */
+.table td, .table th {
+    vertical-align: middle; /* Vertically align the content */
+  }
+  
+  .table img {
+    border-radius: 8px; /* Optional: round the corners of the image */
+  }
+  
+  .text-center {
+    font-size: 1.1rem; /* Adjust font size for text content */
+  }
+  
+  .text-muted {
+    font-size: 0.9rem; /* Slightly smaller font for product descriptions */
+  }
+  
+  .input-group button {
+    font-size: 1.2rem; /* Make the quantity buttons larger */
+  }
+  

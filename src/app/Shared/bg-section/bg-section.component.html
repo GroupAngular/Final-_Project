@@ -11,10 +11,13 @@
           <div class="col-12">
             <h1 class="fw-bold text-white">{{bgSectionInfo.title}}</h1>
             <p class="d-flex justify-content-center text-secondary">
-              <a routerLink="/Home" class="text-decoration-none text-secondary"> {{bgSectionInfo.subTitle1}}</a> <a routerLink="/shopProduct" class="text-decoration-none text-secondary"> <span class="mx-2"> <i class="fas fa-chevron-right" style="font-size: 8px"></i> </span>
+              <a routerLink="/Home" class="text-decoration-none text-secondary"> {{bgSectionInfo.subTitle1}}</a> <a routerLink="/shop" class="text-decoration-none text-secondary"> <span class="mx-2"> <i class="fas fa-chevron-right" style="font-size: 8px"></i> </span>
               {{bgSectionInfo.subTitle2}} </a>
               
-              <a routerLink="/shopProductDetails" class="text-decoration-none text-secondary">   <span class="mx-2" *ngIf="bgSectionInfo.subTitle3"> <i class="fas fa-chevron-right" style="font-size: 8px"></i> </span> {{bgSectionInfo.subTitle3}}</a>
+              <a routerLink="/shopProduct" class="text-decoration-none text-secondary">   <span class="mx-2" *ngIf="bgSectionInfo.subTitle3"> <i class="fas fa-chevron-right" style="font-size: 8px"></i> </span> {{bgSectionInfo.subTitle3}}</a>
+            
+              <a routerLink="/single-product-page" class="text-decoration-none text-secondary">   <span class="mx-2" *ngIf="bgSectionInfo.subTitle4"> <i class="fas fa-chevron-right" style="font-size: 8px"></i> </span> {{bgSectionInfo.subTitle4}}</a>
+
             </p>
           </div>
         </div>
