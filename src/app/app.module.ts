@@ -18,7 +18,20 @@ import { WishlistComponent } from './Pages/wishlist/wishlist.component';
 import { CheckoutComponent } from './Pages/checkout/checkout.component';
 import { TeamMemberCardComponent } from './components/cards/team-member-card/team-member-card.component';
 import { ProductCardComponent } from './components/cards/product-card/product-card.component';
+import { FooterComponent } from './Shared/footer/footer.component';
  // Import FormsModule
+
+/**
+ * import to use is=cons from fontawsome and angualr 
+ */
+
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+library.add(faFacebook, faTwitter, faInstagram, faLinkedin);
+
+/** End Imports for fontawsome */
 
 @NgModule({
   declarations: [
@@ -36,11 +49,12 @@ import { ProductCardComponent } from './components/cards/product-card/product-ca
     WishlistComponent,
     CheckoutComponent,
     TeamMemberCardComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    
+    FontAwesomeModule,
     AppRoutingModule,    
     FormsModule // Add FormsModule to imports
 
