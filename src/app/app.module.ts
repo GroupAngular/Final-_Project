@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './Shared/nav-bar/nav-bar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './Pages/home/home.component';
 import { ShopComponent } from './Pages/shop/shop.component';
 import { CartComponent } from './Pages/cart/cart.component';
@@ -19,6 +19,9 @@ import { CheckoutComponent } from './Pages/checkout/checkout.component';
 import { TeamMemberCardComponent } from './components/cards/team-member-card/team-member-card.component';
 import { ProductCardComponent } from './components/cards/product-card/product-card.component';
 import { FooterComponent } from './Shared/footer/footer.component';
+import { CartService } from './services/cart.service';
+import { ConfirmationComponent } from './Pages/confirmation/confirmation.component';
+import { ReturnComponent } from './Pages/return/return.component';
  // Import FormsModule
 
 /**
@@ -50,16 +53,20 @@ library.add(faFacebook, faTwitter, faInstagram, faLinkedin);
     CheckoutComponent,
     TeamMemberCardComponent,
     ProductCardComponent,
-    FooterComponent
+    FooterComponent,
+    ConfirmationComponent,
+    ReturnComponent
+
   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
     AppRoutingModule,    
-    FormsModule // Add FormsModule to imports
+    FormsModule, // Add FormsModule to imports
+    ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

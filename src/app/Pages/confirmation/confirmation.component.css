@@ -23,17 +23,7 @@
     opacity: 0.9;
   }
   
-  .form-control {
-    border: 1px solid #99A4A9;
-    border-radius: 5px;
-  }
-  
-  .form-control:focus {
-    border-color: #3B5D50;
-    box-shadow: 0 0 5px rgba(59, 93, 80, 0.5);
-  }
-  
-  h2, h3, h5, h6 {
+  h2, h4 {
     color: #3B5D50;
   }
   
