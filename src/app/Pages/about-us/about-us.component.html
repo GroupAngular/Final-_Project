@@ -1,0 +1,135 @@
+<header class="position-relative text-center text-white d-flex align-items-center justify-content-center">
+  <!-- Overlay -->
+  <div class="overlay position-absolute"></div>
+
+  <!-- Hero Content -->
+  <div class="hero-section container">
+    <h1 class="display-4 fw-bold">Modern Furniture for Every Room</h1>
+    <p class="lead">Discover stylish furniture to elevate your space.</p>
+    <a routerLink="/Home" class="btn btn-warning btn-lg mt-3">Shop Now</a>
+  </div>
+</header>
+
+
+<!-- ==================================================== -->
+<!-- ===========================header end========================= -->
+<!-- ==================================================== -->
+<!-- ==================================================== -->
+<main class="container ">
+   
+  
+    
+    <!-- ===================================================================== -->
+    <!-- ===================================================================== -->
+    <!-- ===================================================================== -->
+     
+    
+    <!-- ===================================================================== -->
+    <!-- ===================================================================== -->
+  
+    <!-- Our Team Section -->
+    
+
+    <section class="container-fluid">
+      <h1 class="text-center mb-4   primary-color">Our Team</h1>
+      <div class="row d-flex justify-content-center ">
+        <div
+          class="col-12  col-md-6 col-xl-4 d-flex justify-content-center align-items-center flex-wrap"
+          *ngFor="let card of cards"
+        >
+          <app-team-member-card
+            [imageSrc]="card.imageSrc"
+            [playerName]="card.playerName"
+            [description]="card.description"
+            [socialLinks]="card.socialLinks"
+          ></app-team-member-card>
+        </div>
+      </div>
+    </section>
+  
+
+
+
+
+
+
+
+
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+  
+   
+  </main>
+
+
+
+  <!-- ======================================================================================================= -->
+  <!-- ======================================================================================================= -->
+  <!-- ======================================================================================================= -->
+  <!-- ======================================================================================================= -->
+  <!-- ======================================================================================================= -->
+
+   <!-- Customer Opinions Section -->
+   <section id="customer-opinions" class="text-center mt-5 bg-warning pt-5 mt-5">
+    <div>
+      <h2 class="primary-color">What Our Customers Say</h2>
+    </div>
+
+    <!-- Bootstrap Carousel -->
+    <div id="customerCarousel" class="carousel slide mt-4" data-bs-ride="carousel" data-bs-interval="4000">
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#customerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#customerCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#customerCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <!-- Carousel Items -->
+      <div class="carousel-inner">
+        <!-- Opinion 1 -->
+        <div class="carousel-item active">
+          <blockquote class="blockquote text-center">
+            <p class="mb-4">
+              "Absolutely love the craftsmanship of the furniture I purchased!
+              The quality exceeded my expectations. Highly recommended!"
+            </p>
+            <footer class="blockquote-footer">A Happy Customer</footer>
+          </blockquote>
+        </div>
+        <!-- Opinion 2 -->
+        <div class="carousel-item">
+          <blockquote class="blockquote text-center">
+            <p class="mb-4">
+              "Excellent service and delivery. The team was very professional
+              and ensured my complete satisfaction."
+            </p>
+            <footer class="blockquote-footer">Another Happy Customer</footer>
+          </blockquote>
+        </div>
+        <!-- Opinion 3 -->
+        <div class="carousel-item">
+          <blockquote class="blockquote text-center">
+            <p class="mb-4">
+              "The wooden pieces from this store are stunning! They've made my
+              home feel so much warmer and inviting."
+            </p>
+            <footer class="blockquote-footer">Yet Another Happy Customer</footer>
+          </blockquote>
+        </div>
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#customerCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#customerCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+  

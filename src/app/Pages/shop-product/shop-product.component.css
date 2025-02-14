@@ -1,0 +1,32 @@
+
+  
+.rating {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+  }
+  
+  .fa-star {
+    color: gold;
+  }
+  
+  .fa-star-o {
+    color: lightgray;
+  }
+  .sec-height {
+    height: 600px; /* Full viewport height */
+  }
+
+  /* hoveer */
+  img {
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  /* img:hover {
+    display: block;
+    transform: scale(1.1); 
+} */
+
+/* 
+.xx.i:hover{display: block;} */
+  
