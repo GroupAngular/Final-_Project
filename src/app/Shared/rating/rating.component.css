@@ -1,0 +1,20 @@
+.rating {
+    display: flex;
+  }
+  
+  .rating span {
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.3s;
+  }
+  
+  .rating span.filled {
+    color: gold;
+  }
+  
+  .rating span.editable:hover {
+    color: #ff9800;
+  }
+  

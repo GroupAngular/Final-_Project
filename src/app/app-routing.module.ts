@@ -12,6 +12,8 @@ import { UserComponent } from './Pages/user/user.component';
 import { TermsComponent } from './Pages/terms/terms.component';
 import { CheckoutComponent } from './Pages/checkout/checkout.component';
 import { ConfirmationComponent } from './Pages/confirmation/confirmation.component';
+import { ShopProductComponent } from './Pages/shop-product/shop-product.component';
+import { SingleProductPageComponent } from './Pages/single-product-page/single-product-page.component';
 
 const routes: Routes = [
 
@@ -22,6 +24,10 @@ const routes: Routes = [
 ,  {path:"FQA",component:FAQComponent}
 ,  {path:"cart",component:CartComponent}
 ,  {path:"shop",component:ShopComponent}
+,  {path:"shopProduct/:idProduct",component:ShopProductComponent}
+,  {path:"single-product-page/:id",component:SingleProductPageComponent}
+
+,  {path:"shopProduct",component:ShopProductComponent}
 ,{ path: 'checkout', component: CheckoutComponent },
   {path:"user",component:UserComponent}
 ,  {path:"terms",component:TermsComponent}

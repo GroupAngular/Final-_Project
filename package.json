@@ -24,6 +24,9 @@
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "bootstrap": "^5.3.3",
     "e-commerce": "file:",
+    "ngx-toastr": "^19.0.0",
+    "primeicons": "^7.0.0",
+    "primeng": "^19.0.5",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
