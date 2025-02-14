@@ -1,0 +1,195 @@
+<app-bg-section *ngFor="let p of InfoOfSectionBGSingleProductDeta"
+    [bgSectionInfo]="p"></app-bg-section>
+
+<section class="my-5">
+
+    <div class="container">
+        <div class="row" *ngIf="productData">
+            <div class="col-4">
+                <div id="carouselExample" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div
+                            *ngFor="let image of productData.images; let i = index"
+                            class="carousel-item"
+                            [ngClass]="{'active': i === 0}">
+                            <img [src]="image" class="d-block w-100"
+                                [alt]="'Product Image ' + (i + 1)"
+                                (error)="handleImageError($event)"
+                                style="height: 400px;">
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button"
+                        data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"
+                            aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button"
+                        data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon"
+                            aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-">
+                        <h4>
+                            {{productData?.name}} </h4>
+                        <app-rating [maxRating]="5"
+                            [(currentRating)]="productData.rating"
+                            [isEditable]="true">
+
+                        </app-rating>
+                        <h6 class="fw-bold" *ngIf="productData.brand">Brand:
+                            <span class="fw-light">
+                                {{productData?.brand}}</span></h6>
+                        <h6> <span
+                                class="fw-6 fw-bold me-3">${{productData.price}}</span>
+                            <span
+                                class=" text-danger">%{{productData.discountPercentage}}</span></h6>
+
+                        <p class="text-secondary "
+                            style="font-size: 16px;">{{productData.description}}
+                        </p>
+                        <h6 class="fw-bold my-3">Category: <span
+                                class="fw-light">
+                                {{productData?.category}}</span></h6>
+                        <h6 class="fw-bold my-3">Product tags: <span
+                                class="fw-light">
+                                {{productData?.tags}}</span></h6>
+                        <h6 class="fw-bold my-3">Availability: <span
+                                class="fw-light"> In Stock
+                                {{productData?.stock}}</span></h6>
+
+                        <div class="row align-items-center g-2">
+                            <div class="col-auto d-flex align-items-center">
+                                <div class="input-group shadow-sm w-75">
+                                    <button class="btn fw-bold "
+                                        (click)="decreaseQuantity()"
+                                        type="button"
+                                        id="btn-decrease">-</button>
+                                    <input type="text"
+                                        class="form-control text-center border-0 fw-bolds "
+                                        [value]="quantity"
+                                        id="quantity" value="1" readonly>
+                                    <button class="btn fw-bold" type="button"
+                                        (click)="increaseQuantity()"
+                                        id="btn-increase">+</button>
+                                </div>
+
+                            </div>
+                            <div class="col-auto d-flex align-items-center">
+                                <button
+                                    class="btn bg-color fw-bold text-white text-center my-3"
+                                    type="button"
+                                    id="apply-coupon-button"> <i
+                                        class="fa-solid fa-cart-plus 
+     position-relative me-1 " routerLink="/cart" style="cursor: pointer;"></i>
+                                    ADD TO CART</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<section class="my-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <button class="nav-link active" id="nav-home-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#nav-home" type="button" role="tab"
+                            aria-controls="nav-home"
+                            aria-selected="true">Description</button>
+                        <button class="nav-link" id="nav-profile-tab"
+                            data-bs-toggle="tab" data-bs-target="#nav-profile"
+                            type="button" role="tab" aria-controls="nav-profile"
+                            aria-selected="false">Reviews</button>
+
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home"
+                        role="tabpanel" aria-labelledby="nav-home-tab"
+                        tabindex="0">
+                        <div class="row py-5">
+                            <div class="col-12">
+                                <h3>{{productData?.name}}</h3>
+                                <p>
+                                    {{productData?.description}}
+                                </p>
+                                <ul>
+                                    <li><span class="fw-bold fs-6">Category :
+                                        </span><span>{{productData?.category}}</span></li>
+                                    <li><span class="fw-bold fs-6">price :
+                                        </span><span>{{productData?.price}}</span>
+                                    </li>
+                                    <li><span class="fw-bold fs-6">brand :
+                                        </span><span>{{productData?.brand}}</span>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade " id="nav-profile" role="tabpanel"
+                        aria-labelledby="nav-profile-tab"
+                        tabindex="0">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <div
+                                    class="card mb-3 rounded-0 my-3 w-100 overflow-hidden shadow-sm border-0"
+                                    *ngIf="productData?.reviews">
+                                    <app-card-comment
+                                        [comment]="productData.reviews"></app-card-comment>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12" *ngIf="productData?.reviews">
+                                <h4 class="fw-bold">Leave A Comment</h4>
+                                <app-form-comment
+                                    [comment]="productData.reviews"></app-form-comment>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="my-5">
+
+    <div class="container">
+        <div class="row my-3">
+            <h2 class="fw-bold text-center">Related Product
+            </h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-xl-3 col-xxl-3 col-sm-12 col-md-12 d-flex justify-content-center"
+            *ngFor="let product of relatedProducts |slice  :0:3">
+                <app-shop-product-cards
+                    [getProducts]="product"></app-shop-product-cards>
+
+            </div>
+        </div>
+    </div>
+</section>

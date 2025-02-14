@@ -1,0 +1,86 @@
+<div class="header">
+    <h1>Contact Us</h1>
+    <div class="arrow-down animate-bounce">
+      <a href="#formSection" class="arrow-link" (click)="scrollToForm($event)">
+        <i class="fas fa-arrow-down"></i>
+      </a>
+    </div>
+  </div>
+  
+  <section class="contact-section py-5">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-12">
+          <h2 class="display-4">DROP US A LINE!</h2>
+          <p class="lead">Let's Get in Touch</p>
+        </div>
+      </div>
+      <div class="row mb-5">
+        <div class="col-md-4 mb-4">
+          <div class="info-box animate-slide-in-left">
+            <i class="fas fa-map-marker-alt icon"></i>
+            <h4>Address</h4>
+            <p>15/26th of July Street, Zamalek, Cairo, Egypt</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="info-box animate-fade-in">
+            <i class="fas fa-phone icon"></i>
+            <h4>Phone Number</h4>
+            <p>+20 100 074 8719</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="info-box animate-slide-in-right">
+            <i class="fas fa-envelope icon"></i>
+            <h4>Email Address</h4>
+            <p>hello&#64;efreshit.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="formSection" class="form-section py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card form-card animate-slide-in-up">
+            <div class="card-body">
+              <h2 class="text-center mb-4">Drop Us a Line</h2>
+              <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+                <div class="mb-3">
+                  <label for="name" class="form-label">Your Name *</label>
+                  <input type="text" class="form-control custom-input" id="name" formControlName="name" placeholder="Enter your name" required>
+                  <div class="invalid-feedback" *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">Please enter your name.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email Address *</label>
+                  <input type="email" class="form-control custom-input" id="email" formControlName="email" placeholder="Enter your email" required>
+                  <div class="invalid-feedback" *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">Please enter a valid email address.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="mobile" class="form-label">Mobile Number</label>
+                  <input type="tel" class="form-control custom-input" id="mobile" formControlName="mobile" placeholder="Enter your mobile number">
+                  <div class="invalid-feedback" *ngIf="contactForm.get('mobile')?.invalid && contactForm.get('mobile')?.touched">Please enter a valid mobile number.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="subject" class="form-label">Subject</label>
+                  <input type="text" class="form-control custom-input" id="subject" formControlName="subject" placeholder="Enter the subject">
+                  <div class="invalid-feedback" *ngIf="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched">Please enter a subject.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Message *</label>
+                  <textarea class="form-control custom-textarea" id="message" formControlName="message" rows="5" placeholder="Enter your message" required></textarea>
+                  <div class="invalid-feedback" *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">Please enter a message.</div>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-custom" [disabled]="contactForm.invalid">SUBMIT NOW</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
