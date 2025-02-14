@@ -1,0 +1,17 @@
+<form  (ngSubmit)="addComment()" >
+    <div class="mb-3">
+      <label for="reviewerName" class="form-label">Name</label>
+      <input type="text" class="form-control" id="reviewerName" placeholder="Your Name" [(ngModel)]="newComment.reviewerName" name="reviewerName" required>
+    </div>
+    <div class="mb-3">
+      <label for="rating" class="form-label">Rating</label>
+      <input type="number" [(ngModel)]="newComment.rating" name="rating" id="rating" class="form-control" min="1" max="5" required>
+    </div>
+    <div class="mb-3">
+      <label for="commentText" class="form-label">Message</label>
+      <textarea [(ngModel)]="newComment.comment" name="commentText" id="commentText" class="form-control" rows="3" required></textarea>
+    </div>
+    <div class="mb-3">
+      <button class="btn bg-color fw-bold text-white text-center" type="submit">SEND</button>
+    </div>
+  </form>

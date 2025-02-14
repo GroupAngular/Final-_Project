@@ -1,0 +1,29 @@
+<div class="card-container container-fluid">
+    <div class="card-inner">
+      <!-- Front Side -->
+      <div class="card-front">
+        <img [src]="imageSrc" class="card-img-top" alt="Player Image" />
+        <div class="card-body text-center">
+          <h5 class="card-title mt-5">{{ playerName }}</h5>
+          <p class="card-text">{{ description }}</p>
+        </div>
+      </div>
+  
+      <!-- Back Side -->
+      <div class="card-back">
+        <h5 class="text-center">Connect with {{ playerName }}</h5>
+        <div class="social-links text-center">
+          <a
+            *ngFor="let link of socialLinks"
+            [href]="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-outline-success m-1"
+          >
+            <i [class]="link.iconClass"></i> {{ link.platform }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
