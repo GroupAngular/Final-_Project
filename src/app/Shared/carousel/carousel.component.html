@@ -1,0 +1,22 @@
+// <!-- carousel components.html -->
+
+<div class="position-absolute top-100 start-50 translate-middle w-100 d-flex justify-content-around Carouselstyle mb-5">
+    <div class="container">
+     <div class="row">
+      <p-carousel [value]="carouselSection" [numVisible]="4" [numScroll]="1" [circular]="false" class="col-xl-12 col-xxl-12 col-lg-12 col-md-12 col-sm-12">
+        
+        <ng-template let-carousel pTemplate="item">
+          <div class="product-item d-flex justify-content-around ">
+            <div class="product-item-content d-flex flex-column align-items-center ">
+              <!-- Image as Circle with click event -->
+              <img [src]="carousel.image" alt="{{carousel.name}}" class="scale-on-hover rounded-circle  mb-2 shadow-lg border border-3 border-white" (click)="onImageClick(carousel)" style="width: 230px ; height: 230px; cursor: pointer;">
+              
+              <!-- Name under the image -->
+              <h4 class="p-mb-1">{{carousel.name}}</h4>
+            </div>
+          </div>
+        </ng-template>
+      </p-carousel>
+     </div>
+    </div>
+  </div>
