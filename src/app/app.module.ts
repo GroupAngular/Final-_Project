@@ -45,6 +45,8 @@ import { FooterComponent } from './Shared/footer/footer.component';
 import { CartService } from './services/cart.service';
 import { ConfirmationComponent } from './Pages/confirmation/confirmation.component';
 import { ReturnComponent } from './Pages/return/return.component';
+import { ProfileComponent } from './Pages/profile/profile.component';
+ // Import FormsModule
 
 @NgModule({
   declarations: [
@@ -80,9 +82,9 @@ import { ReturnComponent } from './Pages/return/return.component';
     /*===================== after clone need to import start=================================*/
     FooterComponent,
     ConfirmationComponent,
-    ReturnComponent
+    ReturnComponent,
+    ProfileComponent
         /*===================== after clone need to import start=================================*/
-
   ],
   imports: [
     BrowserModule,
