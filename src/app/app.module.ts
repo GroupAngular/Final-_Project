@@ -21,6 +21,7 @@ import { ProductCardComponent } from './components/cards/product-card/product-ca
 import { CartService } from './services/cart.service';
 import { ConfirmationComponent } from './Pages/confirmation/confirmation.component';
 import { ReturnComponent } from './Pages/return/return.component';
+import { ProfileComponent } from './Pages/profile/profile.component';
  // Import FormsModule
 
 @NgModule({
@@ -41,7 +42,8 @@ import { ReturnComponent } from './Pages/return/return.component';
     TeamMemberCardComponent,
     ProductCardComponent,
     ConfirmationComponent,
-    ReturnComponent
+    ReturnComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
