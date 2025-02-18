@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -46,6 +46,14 @@ import { CartService } from './services/cart.service';
 import { ConfirmationComponent } from './Pages/confirmation/confirmation.component';
 import { ReturnComponent } from './Pages/return/return.component';
 import { ProfileComponent } from './Pages/profile/profile.component';
+import { DashboardComponent } from './Pages/dashboard/dashboard.component';
+import { ProductListComponent } from './Pages/product-list/product-list.component';
+import { SidebarComponent } from './Pages/sidebar/sidebar.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { SalesChartComponent } from './Pages/sales-chart/sales-chart.component';
+
+
+
  // Import FormsModule
 
 @NgModule({
@@ -83,7 +91,13 @@ import { ProfileComponent } from './Pages/profile/profile.component';
     FooterComponent,
     ConfirmationComponent,
     ReturnComponent,
-    ProfileComponent
+    ProfileComponent,
+    DashboardComponent,
+    ProductListComponent,
+    SidebarComponent,
+    SalesChartComponent,
+
+
         /*===================== after clone need to import start=================================*/
   ],
   imports: [
@@ -100,8 +114,11 @@ ToastrModule.forRoot(), // ToastrModule added
     BrowserAnimationsModule, 
     ButtonModule, 
     CarouselModule, 
+    NgxChartsModule,
+
 
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [CartService ,provideHttpClient()
 ,
     provideAnimations(), // required animations providers
