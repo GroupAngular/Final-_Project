@@ -1,25 +1,15 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD
-=======
 import { ProductsService } from '../../services/products.service';
 import { Router } from '@angular/router';
->>>>>>> mo2
+
 
 @Component({
   selector: 'app-shop',
   standalone: false,
-<<<<<<< HEAD
-  
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.css'
 })
-export class ShopComponent {
 
-=======
-
-  templateUrl: './shop.component.html',
-  styleUrl: './shop.component.css'
-})
 
 
 
@@ -74,6 +64,4 @@ onProductSelect(furnitureType: any) {
 goTopartsProsuct(partid:any){this.router.navigate(['/shopProduct',partid])}
 
 
-
->>>>>>> mo2
 }

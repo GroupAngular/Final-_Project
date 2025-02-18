@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD
-=======
 import { ProductsService } from '../../services/products.service';
->>>>>>> mo2
+
 
 @Component({
   selector: 'app-wishlist',
@@ -12,9 +10,7 @@ import { ProductsService } from '../../services/products.service';
   styleUrl: './wishlist.component.css'
 })
 export class WishlistComponent {
-<<<<<<< HEAD
 
-=======
   quantity: number = 0; // Default quantity
 
   // Increase quantity
@@ -40,5 +36,5 @@ export class WishlistComponent {
   constructor(private global: ProductsService) {}
 
   
->>>>>>> mo2
+
 }
