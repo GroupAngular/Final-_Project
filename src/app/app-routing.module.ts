@@ -14,6 +14,8 @@ import { CheckoutComponent } from './Pages/checkout/checkout.component';
 import { ConfirmationComponent } from './Pages/confirmation/confirmation.component';
 import { ShopProductComponent } from './Pages/shop-product/shop-product.component';
 import { SingleProductPageComponent } from './Pages/single-product-page/single-product-page.component';
+import { DashboardComponent } from './Pages/dashboard/dashboard.component';
+import { ProductListComponent } from './Pages/product-list/product-list.component';
 
 const routes: Routes = [
 
@@ -37,7 +39,10 @@ const routes: Routes = [
 
 ,  {path:"wishlist",component:WishlistComponent}
 ,
-{path:"confirmation",component:ConfirmationComponent}
+{path:"confirmation",component:ConfirmationComponent},
+{ path: 'dashboard', component: DashboardComponent },
+  { path: 'products', component: ProductListComponent }
+
 
 ];
 

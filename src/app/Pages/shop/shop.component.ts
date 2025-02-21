@@ -2,11 +2,15 @@ import { Component } from '@angular/core';
 
 import { ProductsService } from '../../services/products.service';
 import { Router } from '@angular/router';
+import { ProductsService } from '../../services/products.service';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-shop',
   standalone: false,
-  
+
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.css'
 })

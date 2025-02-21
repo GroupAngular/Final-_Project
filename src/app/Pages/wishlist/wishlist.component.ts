@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
 
 
@@ -10,6 +11,9 @@ import { ProductsService } from '../../services/products.service';
   styleUrl: './wishlist.component.css'
 })
 export class WishlistComponent {
+
+
+  quantity: number = 0; // Default quantity
 
 
   InfoOfSectionBGSingleProductDetails=[{
@@ -43,7 +47,6 @@ cart:any[]=[];
     
 
   
-  
 
     // Method to toggle cart status
     toggleCart(product:any){
@@ -55,5 +58,5 @@ cart:any[]=[];
       this.cart = this.global.getCart();
     }
     
- 
+
 }
