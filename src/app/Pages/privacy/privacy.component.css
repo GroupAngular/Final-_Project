@@ -1,4 +1,4 @@
-
+/* 
 .privacy-policy-page {
     min-height: 100vh;
   }
@@ -17,4 +17,20 @@
   
   a:hover {
     text-decoration: underline;
+  } */
+
+  .nav-link.active {
+    background-color: transparent !important; /* Remove the background color */
+    color: #3B5D50 !important; /* Change the text color */
+    border: none; /* Remove border if necessary */
   }
+  
+  .nav-link {
+    background-color: transparent; /* Ensure no background color by default */
+    color: black; /* Initial text color */
+  }
+  
+  .nav-link:hover {
+    color: #2C3E50; /* Change color on hover, if needed */
+  }
+  

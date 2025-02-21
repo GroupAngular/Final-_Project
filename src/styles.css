@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 .text-color{color: #3b5d50;}
 .bg-color{background-color: #3b5d50;}
-
+.bgcolor{
+    background-color: #c8d6d984;
+}
 .bg-color:hover{
     background-color: #A0B9BF;
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -11,45 +11,33 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ShopProductCardsComponent {
 @Input() getProducts:any
-  products:any=[]
+@Input() isInCart: boolean = false;  
+@Input() isInWishlist: boolean = false;  
+@Output() toggleWishlist = new EventEmitter<any>();  
+@Output() toggleCart = new EventEmitter<any>();  
+
+products:any=[]
+// Method to toggle wishlist status
+toggleWishlistStatus() {
+  this.toggleWishlist.emit(this.getProducts);  // Emit event with product data
+}
+toggleCartStatus(){
+  this.toggleCart.emit(this.getProducts)
+}
+
   constructor(public global:ProductsService,private Activate: ActivatedRoute){}
   ngOnInit(){
 
-    let ProductId=this.Activate.snapshot.paramMap.get("idProduct")
-    this.global.getProductDetails(ProductId).subscribe(result=>{console.log(result)
-      this.products=result
-       })
+    // let ProductId=this.Activate.snapshot.paramMap.get("idProduct")
+    // this.global.getProductDetails(ProductId).subscribe(result=>{console.log(result)
+    //   this.products=result
+    //    })
    }
 
-  userRating: number = 3; // Initial rating
 
   defaultImage:string='images/chair.jpg'
   hoverImage:string='images/bg.jpg'
   currentImage :string=this.defaultImage
-  isHovered: boolean = false; // Track hover state
-
-
-  // onMouseEnter(){this.currentImage=this.hoverImage;
-  
-  // }
-  //   onMouseLeave(){
-  //     this.currentImage=this.defaultImage;
-    
-  
-  //   }
-    quantity: number = 0; // Default quantity
-
-    // Increase quantity
-    increaseQuantity(): void {
-      this.quantity++;
-    }
-  
-    // Decrease quantity
-    decreaseQuantity(): void {
-        this.quantity--;
-      
-    }
-
 
 
 
