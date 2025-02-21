@@ -1,220 +1,264 @@
-<!DOCTYPE html>
-<html lang="en">
+<app-bg-section *ngFor="let p of InfoOfSectionBGSingleProductDeta" [bgSectionInfo]="p"></app-bg-section>
+<section class="d-flex justify-content-center align-items-center pt-5 overflow-hidden">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart</title>
-</head>
+    <div class="container">
 
-<body class="bgCart-color">
-    <section class="d-flex justify-content-center align-items-center vh-100">
+        <div class="row d-flex justify-content-center align-items-center">
 
-        <div class="container">
+            <div class="col-xl-7 col-xxl-7 col-lg-7 col-sm-12 col-md-12">
 
-            <div class="row d-flex justify-content-center align-items-center">
+                <div class="card mb-5 border-0 rounded-2 shadow-lg element overflow-hidden">
 
-                <div class="col-xl-6 col-xxl-6 col-lg-6 col-sm-12 col-md-12">
-                    
-                    <div class="card mb-3 rounded-0 shadow-sm element">
+                    <div class="card-body ">
 
-                                <div class="card-body ">
-                                    <div class="row d-flex justify-content-between align-items-center fw-bold border-bottom pb-2">
-                                        <div class="col-6">
-                                            <h5 class="card-title fw-bold ms-2">Product</h5>
+
+                        <!-- <div class="row d-flex justify-content-between align-items-center fw-bgold my-4">
+                              <div *ngif="cart.length===0">Your cart is empty</div>
+                              
+                                <div class="col-6 d-flex align-items-center" *ngfor="let product of cart">
+                                    <img src="/images/chair.jpg" class="rounded img-thumbnail" style="width: 70px;"
+                                        alt="Chair Image">
+                                    <div class="ms-3">
+                                        <h6 class="fw-bold">{{product.name}}</h6>
+                                        <h6 class="text-muted fs-6">{{product.description}}</h6>
+
+                                        <div class="d-flex mt-2">
+
+                                            <button class="btn  btn-sm me-2" title="Remove">
+                                                <i class="fa-solid fa-trash-can " style="font-size: 12px;"></i>
+                                            </button>
+                                            <button class="btn  btn-sm" title="Add to Wishlist">
+                                                <i class="fa-regular fa-heart " style="font-size: 12px;"></i>
+                                            </button>
+
+                                            <button class="btn  btn-sm me-2" title="Remove">
+                                                <span class="text-danger" style="font-size: 12px;">12%</span> </button>
 
                                         </div>
 
 
-                                        <div class="col-6 d-flex justify-content-around">
-                                            <h5 class="card-title fw-bold me-4">Price</h5>
-                                            <h5 class="card-title fw-bold me-2">Quantity</h5>
-
-                                           
-                                        </div>
 
                                     </div>
 
-                                    <div class="row d-flex justify-content-between align-items-center fw-bgold my-4" >
-                                        <div class="col-6 d-flex align-items-center">
-                                                <img src="/images/chair.jpg" class="rounded img-thumbnail" style="width: 70px;" alt="Chair Image">
-                                                <div class="ms-3">
-                                                    <h6 class="fw-bold">Chair</h6>
-                                                    <h6 class="text-muted fs-6">Donec vitae odio</h6>
 
-                                                    <div class="d-flex mt-2">
-                                                        <!-- Remove Icon -->
-                                                         
-                                                        <button class="btn  btn-sm me-2" title="Remove">
-                                                            <i class="fa-solid fa-trash-can " style="font-size: 12px;"></i>  
-                                                                                                              </button>
-                                                        <!-- Wishlist Icon -->
-                                                        <button class="btn  btn-sm" title="Add to Wishlist" >
-                                                            <i class="fa-regular fa-heart " style="font-size: 12px;"></i>   
-                                                                                                             </button>
-                                                    
-                                                                                                             <button class="btn  btn-sm me-2" title="Remove">
-<span class="text-danger" style="font-size: 12px;">12%</span>                                                                                                                                                                  </button>
-                                                    
-                                                                                                            </div>                                       
-
-                                                
-                                                
-                                                </div>
+                                </div>
 
 
+                                <div class="col-6 d-flex justify-content-around align-items-center">
+                                    <h6 class="card-title fw-bold ms-4">$345</h6>
+                                    <h5 class="card-title fw-bold col-5  ms-5">
+
+                                        <div class="input-group shadow-sm col-5">
+                                            <button class="btn fw-bold " (click)="decreaseQuantity()" type="button"
+                                                id="btn-decrease">-</button>
+                                            <input type="text" class="form-control text-center border-0 fw-bolds "
+                                                [value]="quantity" id="quantity" value="1" readonly>
+                                            <button class="btn fw-bold" type="button" (click)="increaseQuantity()"
+                                                id="btn-increase">+</button>
                                         </div>
+                                    </h5>
 
 
-                                        <div class="col-6 d-flex justify-content-around align-items-center">
-                                            <h6 class="card-title fw-bold ms-4">$345</h6>
-                                            <h5 class="card-title fw-bold col-5  ms-5">
+                                </div>
 
-                                                <div class="input-group shadow-sm col-5">
-                                                    <button class="btn fw-bold "(click)="decreaseQuantity()" type="button" id="btn-decrease">-</button>
-                                                    <input type="text" class="form-control text-center border-0 fw-bolds "[value]="quantity"  id="quantity" value="1" readonly>
-                                                    <button class="btn fw-bold" type="button"(click)="increaseQuantity()" id="btn-increase">+</button>
-                                                  </div>
-                                            </h5>
 
-                                           
+
+                            </div> -->
+
+                        <table class="table align-items-center">
+                            <thead class="table-dark">
+                                <tr>
+
+                                    <th scope="col" class="text-center ">Product</th>
+                                    <th scope="col" class="text-center ">Name</th>
+
+                                    <th scope="col" class="text-center ">Remove</th>
+
+                                    <th scope="col" class="text-center ">Price</th>
+                                    <th scope="col" class="text-center ">Discount</th>
+
+                                    <th scope="col" class="text-center ">Total</th>
+
+                                    <th scope="col" class="text-center">Quantity</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngIf="cart.length === 0">
+                                    <td colspan="7" class="text-center py-4">Your Cart is empty.</td>
+                                </tr>
+
+                                <tr class="align-items-center justify-content-center" *ngFor="let product of cart">
+
+                                    <td scope="col-12 d-flex align-items-center" routerLink="/single-product-page/{{product.id}}" style="cursor: pointer;">
+
+                                        <img [src]="product.images[0]" class="rounded img-thumbnail" style="width: 70px;"
+                                            alt="Chair Image" >
+
+                                    </td>
+                                    <td scope="col" class="text-center pt-3">{{product.name}}
+                                    </td>
+                                    <td scope="col" class="text-center pt-3">
+
+                                        <button class="btn  btn-sm me-2" title="Remove">
+                                            <i class="fa-solid fa-trash-can " style="font-size: 12px;"
+                                                (click)="removeCart(product)"></i>
+                                        </button>
+                                    </td>
+
+                                    <td scope="col" class="text-center pt-3">${{product.price}}</td>
+                                    <td scope="col" class="text-center pt-3"><button class="btn  btn-sm me-2"
+                                            title="Remove">
+                                            <span class="text-danger">{{product.discountPercentage}}%</span> </button></td>
+                                    <td scope="col" class="text-center pt-3">${{ product.price * product.quantity }}
+                                    </td>
+
+                                    <td scope="col d-flex w-25" class="text-center pt-3">
+
+                                        <div
+                                            class="input-group input-group-sm w-auto d-inline-flex justify-content-center shadow-sm ">
+                                            <button class="btn  btn-sm" type="button" id="btn-decrease"
+                                                (click)="decreaseQuantity(product)">-</button>
+                                            <input type="text" name="quantity" [(ngModel)]="product.quantity"
+                                                (change)="updateQuantity(product.id, product.quantity)" min="1"
+                                                class="form-control text-center border-0" id="quantity"
+                                                [value]="product.quantity" style="width: 50px;">
+
+                                            <button class="btn  btn-sm" type="button" id="btn-increase"
+                                                (click)="increaseQuantity(product)">+</button>
                                         </div>
-
-                                        
-
-                                    </div>
-
-                                    
+                                    </td>
 
 
-                          
-                        </div>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
                     </div>
-
                 </div>
 
-                 <div class="col-xl-4 col-xxl-4 col-lg-4 col-sm-12 col-md-12">
-    
-                    <div class="row">
-                        <div class="card mb-3 container shadow-sm rounded-0 element" style="width: 24rem;">
-    
-                            <div class="row ">
-                                <div class="col-12">
-                                    <div class="card-body">
-                                        <h5 class="card-title fw-bold">Apply Coupon</h5>
-                                        <p class="card-text"><small class="text-body-secondary">Using A Promo code</small>
-                                        </p>
-                                        <form class="row ">
-    
-                                            <div class="col-8">
-                                                <input type="text" class="form-control" placeholder="Enter Coupon Code"
-                                                    aria-label="Coupon Code" aria-describedby="apply-coupon-button">
-                                            </div>
-                                            <div class="col-4">
-                                                <button class="btn bg-color fw-bold text-white text-center" type="button"
-                                                    id="apply-coupon-button">Apply</button>
-                                            </div>
-                                        </form>
-                                    </div>
+            </div>
+
+            <div class="col-xl-4 col-xxl-4 col-lg-4 col-sm-12 col-md-12 mb-5">
+
+                <div class="row">
+                    <div class="card mb-3 container border-0 rounded-2 shadow-lg element" style="width: 24rem;">
+                        <div class="row ">
+                            <div class="col-12">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">Apply Coupon</h5>
+                                    <p class="card-text"><small class="text-body-secondary">Using A Promo
+                                            code</small>
+                                    </p>
+                                    <form class="row ">
+
+                                        <div class="col-8">
+                                            <input type="text" class="form-control" [(ngModel)]="promoCode"
+                                                placeholder="Coupon(DISCOUNT10)" aria-label="Coupon Code"
+                                                aria-describedby="apply-coupon-button" name="coupon">
+                                        </div>
+                                        <div class="col-4">
+                                            <button class="btn bg-color fw-bold text-white text-center" type="button"
+                                                id="apply-coupon-button" (click)="applyCoupon()">Apply</button>
+                                        </div>
+                                    </form>
                                 </div>
-    
                             </div>
+
                         </div>
                     </div>
-    
-    
-                    <div class="row">
-                        <div class="card mb-3 container shadow-sm rounded-0 element" style="width: 24rem;">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="card-body">
-                                        <h5 class="card-title fw-bold border-bottom pb-2">Total</h5>
-    
-                                        <div class="row  mt-3">
-    <div class="col- d-flex justify-content-between text-center">
-        
-        <h6 class="fw-bold">Total</h6>
-    
-    
-        <h6>$96</h6>
-    </div>
-    
-    
+                </div>
+
+
+                <div class="row">
+                    <div class="card mb-3 container border-0 rounded-2 shadow-lg element" style="width: 24rem;">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold border-bottom pb-2">Total</h5>
+
+                                    <div class="row  mt-3">
+                                        <div class="col- d-flex justify-content-between text-center">
+
+                                            <h6 class="fw-bold">Total</h6>
+
+
+                                            <h6>${{ total }}</h6>
                                         </div>
-    
-    
-    
-                                        
-                                        <div class="row text-center mt-3">
-    
-                                            <div class="col- d-flex justify-content-between text-center">
-        
-                                                <h6 class="fw-bold">Delivery</h6>
-                                            
-                                            
-                                                <h6>$96</h6>
-                                            </div>
-    
-                                        </div>
-    
-                                        
-                                        <div class="row text-center mt-3 border-bottom">
-    
-                                            <div class="col- d-flex justify-content-between text-center">
-        
-                                                <h6 class="fw-bold">Discount</h6>
-                                            
-                                            
-                                                <h6>$96</h6>
-                                            </div>
-    
-                                        </div>
-    
-                                          
-                                        <div class="row text-center mt-3">
-    
-                                            <div class="col- d-flex justify-content-between text-center">
-        
-                                                <h6 class="fw-bold">Subtotal</h6>
-                                            
-                                            
-                                                <h6>$96</h6>
-                                            </div>
-    
-    
-                                        </div>
-    
-                                          
-                                        <div class="row  mt-3">
-    
-                                            <div class="col-12">
-                                                <button class="btn bg-color fw-bold text-white text-center  w-100" >Checkout</button>
-                                            </div>
-    
-    
-                                        </div>
+
+
                                     </div>
-    
+
+
+
+
+                                    <div class="row text-center mt-3">
+
+                                        <div class="col- d-flex justify-content-between text-center">
+
+                                            <h6 class="fw-bold">Delivery</h6>
+
+
+                                            <h6>${{ delivery }}</h6>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="row text-center mt-3 border-bottom">
+
+                                        <div class="col- d-flex justify-content-between text-center">
+
+                                            <h6 class="fw-bold">Discount</h6>
+
+
+                                            <h6> {{ discount }}%</h6>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="row text-center mt-3">
+
+                                        <div class="col- d-flex justify-content-between text-center">
+
+                                            <h6 class="fw-bold">Subtotal</h6>
+
+
+                                            <h6>${{ subtotal }}</h6>
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <div class="row  mt-3">
+
+                                        <div class="col-12">
+                                            <button class="btn bg-color fw-bold text-white text-center  w-100"
+                                                routerLink="/checkout">Checkout</button>
+                                        </div>
+
+
+                                    </div>
                                 </div>
-    
+
                             </div>
+
                         </div>
                     </div>
-    
-    
-    
-    
-    
-                </div> 
+                </div>
+
+
+
 
 
             </div>
 
+
         </div>
-    </section>
 
-
-
-</body>
-
-</html>
+    </div>
+</section>

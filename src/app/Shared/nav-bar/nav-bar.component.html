@@ -1,8 +1,9 @@
 
-<nav class="navbar navbar-expand-lg mt-0 shadow-sm position-fixed "
+<nav class="navbar navbar-expand-lg mt-0 shadow-sm position-fixed navbar navbar-expand-lg shadow-sm fixed-top avbar-light bg-light top-0"
  [ngClass]="{'user-navbar': isUserPage}" style="z-index:10;width: 100%;">
     <div class="container">
-        <a class="navbar-brand text-color fw-bold" >LOGO</a>
+         <a class="navbar-brand text-color fw-bold" href="#"><img src="images/logo.png" alt="" class="w-25 h-25" srcset=""></a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -15,6 +16,7 @@
                 <li class="nav-item">
                     <a class="nav-link fw-bold" routerLink="/shop">Shop</a>
                 </li>
+              
                 <li class="nav-item">
                     <a class="nav-link fw-bold" routerLink="/Contact">Contact Us </a>
                 </li>
@@ -35,9 +37,18 @@
 
             </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex gap-3">
+           
+
                 <li class="nav-item">
-                    <i class="fa-regular fa-heart fs-5" routerLink="/wishlist"></i>
+                    <i class="fa-regular fa-heart fs-5" routerLink="/wishlist">
+                        <span class="position-absolute top-75 start-75 translate-middle badge rounded-circle bg-color" style="font-size: 8px;">
+                            {{ wishlistCount }}                       
+                                 <span class="visually-hidden ">unread messages</span>
+                        </span>
+                    </i>
                 </li>
+
+
                 <li class="nav-item">
                     <i class="fa-regular fa-user  fs-5" routerLink="/user"></i>
                 </li>
@@ -46,7 +57,7 @@
                 <li class="nav-item">
                     <i class="fa-solid fa-cart-plus fs-5 position-relative " routerLink="/cart">
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-color" style="font-size: 8px;">
-                            0
+                            {{cartCount}}
                             <span class="visually-hidden ">unread messages</span>
                         </span>
                     </i>

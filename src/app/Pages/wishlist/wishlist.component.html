@@ -1,1 +1,76 @@
-<p>wishlist works!</p>
+
+<app-bg-section *ngFor="let p of InfoOfSectionBGSingleProductDetails" [bgSectionInfo]="p"></app-bg-section>
+
+<section>
+    <div class="container d-flex align-items-center justify-content-center">
+        <div class="row col-xl-10 col-xxl-10 col-lg-10 col-sm-12 col-md-12 my-5">
+
+
+
+
+            <div class="card mb-3  shadow-lg border-0  element">
+
+                <div class="card-body ">
+                    <table class="table align-items-center">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col" class=""></th>
+                                <th scope="col" class="">Product</th>
+                                <th scope="col" class="">Product Name</th>
+
+                                <th scope="col" class="">Price</th>
+                                <th scope="col" class="">Stock Status</th>
+                                <th scope="col" class=""></th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr  *ngIf="wishlist.length === 0"><th colspan="7" class="text-center py-4">Your wishlist is empty.</th></tr>
+
+                                <tr class="align-items-center justify-content-center" *ngFor="let product of wishlist">
+                                <th scope="row"> <a (click)="removeFromWishlist(product)" style="cursor: pointer;"><i class="fa-solid fa-trash-can text-dark"
+                                            style="font-size: 12px;"></i></a>
+                                </th>
+                                <th scope="col-12 d-flex align-items-center" routerLink="/single-product-page/{{product.id}}" style="cursor: pointer;">
+                                        <img [src]="product.images[0]" class="rounded img-thumbnail" style="width: 70px;"
+                                            alt="Chair Image">
+
+                                </th>
+                                <th scope="col" class="">{{product.name}}</th>
+
+                                <th scope="col">${{product.price}}</th>
+                                <th scope="col">{{product.availabilityStatus}}</th>
+                                
+                                <th scope="col">
+                                    <ul class="d-flex list-unstyled align-items-center justify-content-between">
+                                        <li (click)="toggleCart(product)" [ngClass]="{'text-color': global.isInCart(product)}" style="cursor: pointer;">
+                                          <i class="fa-solid fa-cart-plus"></i>
+                                        </li>
+
+                                     
+                                    </ul>
+                                  </th>
+                                  
+                            </tr>
+                         
+
+                        </tbody>
+                    </table>
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+    </div>
+</section>
+

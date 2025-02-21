@@ -1,0 +1,41 @@
+<div class="card shadow-sm rounded-2 border-0 my-3" style="width: 18rem; height: 22rem;">
+    <div class="position-relative h-50">
+        <img [src]="getProducts.images[0]" class="card-img-top rounded-top-2 w-100 h-100" alt="...">
+        <span class="badge text-bg-danger position-absolute top-0 start-0 ms-2 mt-2 rounded-0">Best
+        Seller</span>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-xxl-12 col-xl-12 col-sm-12">
+                <h5 class="card-title fw-bold" routerLink="/single-product-page/{{getProducts.id}}" style="cursor: pointer;">
+                    {{getProducts.name}}
+                </h5>
+            </div>
+            <p class="card-text text-secondary text-truncate description" style="font-size: 12px;">
+                {{getProducts.description}}
+            </p>
+            <ul class="d-flex list-unstyled align-items-center justify-content-between mt-3">
+                <li class="d-flex align-items-center" style="flex: 1;">
+                    <p class="fw-bold pe-2" style="font-size: 18px;">${{getProducts.price}}</p>
+                    <p class="fw-bold text-danger text-decoration-line-through" style="font-size: 14px;">%{{getProducts.discountPercentage}}</p>
+                </li>
+                <li class="d-flex align-items-center pe-2" style="cursor: pointer;" (click)="toggleWishlistStatus()" [ngClass]="{'in-wishlist': isInWishlist}">
+                    <span *ngIf="isInWishlist">
+                        <i class="fa-solid fa-heart text-color"></i>
+                    </span>
+                    <span *ngIf="!isInWishlist">
+                        <i class="fa-solid fa-heart text-secondary"></i>
+                    </span>
+                </li>
+                <li class="d-flex align-items-center" style="cursor: pointer;" (click)="toggleCartStatus()" [ngClass]="{'in-cart': isInCart}">
+                    <span *ngIf="isInCart">
+                        <i class="fa-solid fa-cart-plus text-color"></i>
+                    </span>
+                    <span *ngIf="!isInCart">
+                        <i class="fa-solid fa-cart-plus text-secondary"></i>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

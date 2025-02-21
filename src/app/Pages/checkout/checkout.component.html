@@ -1,11 +1,14 @@
+<app-bg-section *ngFor="let p of InfoOfSectionBGSingleProductDeta"  [bgSectionInfo]="p"></app-bg-section>
+
+
 <section class="d-flex justify-content-center align-items-center vh-100">
     <div class="container">
       <div class="row d-flex justify-content-center align-items-center">
         <!-- Billing and Shipping Details Form -->
         <div class="col-xl-6 col-xxl-6 col-lg-6 col-sm-12 col-md-12">
-          <div class="card mb-3 rounded-0 shadow-sm element">
+          <div class="card mb-3 rounded-2 border-0 shadow-lg element">
             <div class="card-body">
-              <h2 class="mb-4">Billing & Shipping Details</h2>
+              <h2 class="mb-4 fw-bold fs-6 bg-dark text-white p-2 text-center">Billing & Shipping Details</h2>
               <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
                 <div class="mb-3">
                   <label for="fullName" class="form-label">Full Name</label>
@@ -44,7 +47,10 @@
                     </div>
                   </div>
                 </div>
-                <button type="submit" class="btn">Place Order</button>
+                <div class="col-12">
+                  <button type="submit"
+                      class="btn bg-color fw-bold text-white text-center fs-6 w-100" routerLink="">Place Order</button>
+              </div>
               </form>
             </div>
           </div>
@@ -52,23 +58,23 @@
   
         <!-- Order Summary -->
         <div class="col-xl-4 col-xxl-4 col-lg-4 col-sm-12 col-md-12">
-          <div class="card mb-3 rounded-0 shadow-sm element">
+          <div class="card mb-3 rounded-2 shadow-lg border-0 element ">
             <div class="card-body">
-              <h3 class="mb-4">Order Summary</h3>
-              <ul class="list-group mb-3">
-                <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of cartItems">
+              <h3 class="mb-4 fw-bold fs-6 bg-dark text-white p-2 text-center">Order Summary</h3>
+              <ul class="list-group  ">
+                <li class=" d-flex justify-content-between align-items-center pb-3" *ngFor="let item of cartItems">
                   {{ item.name }} (x{{ item.quantity }})
                   <span>${{ (item.price * item.quantity).toFixed(2) }}</span>
                 </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
+                <li class=" d-flex justify-content-between align-items-center border-bottom fw-bold pb-3">
                   Delivery
                   <span>${{ deliveryCharge.toFixed(2) }}</span>
                 </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
+                <li class="d-flex justify-content-between align-items-center border-bottom fw-bold pb-3">
                   Discount
                   <span>-${{ discount.toFixed(2) }}</span>
                 </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center fw-bold">
+                <li class=" d-flex justify-content-between align-items-center fw-bold pb-3">
                   Subtotal
                   <span>${{ (totalPrice + deliveryCharge - discount).toFixed(2) }}</span>
                 </li>

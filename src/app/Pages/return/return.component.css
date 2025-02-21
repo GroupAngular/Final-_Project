@@ -1,0 +1,20 @@
+/* return-refund-policy.component.css */
+.return-refund-policy-page {
+    min-height: 100vh;
+  }
+  
+  .card {
+    border-radius: 10px;
+  }
+  
+  h1, h2 {
+    font-weight: bold;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }

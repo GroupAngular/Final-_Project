@@ -1,15 +1,5 @@
-.card {
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: white;
-  }
-  
-  .list-group-item {
-    background-color: #9DACB2;
-    border: none;
-    color: white;
-  }
+
+ 
   
   .btn {
     border-radius: 5px;
@@ -33,12 +23,3 @@
     box-shadow: 0 0 5px rgba(59, 93, 80, 0.5);
   }
   
-  h2, h3, h5, h6 {
-    color: #3B5D50;
-  }
-  
-  .element {
-    background-color: #A0B9BF;
-    padding: 20px;
-    border-radius: 10px;
-  }
