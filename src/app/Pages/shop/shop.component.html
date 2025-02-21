@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-<p>shop works!</p>
-=======
 
   
   <!-- BG Section -->
@@ -12,34 +9,34 @@
 
 
 <!-- Carousel Section -->
-<app-carousel  [carouselSection]="furnitureTypes"   (productSelected)="onProductSelect($event)">  </app-carousel>
+<!-- <app-carousel  [carouselSection]="furnitureTypes"   (productSelected)="onProductSelect($event)">  </app-carousel> -->
 
+<app-carousel  [carouselSection]="furnitureTypes"   (productSelected)="onTypeSelect($event)" >  </app-carousel>
 
 <!-- cards section -->
    <section class="d-flex justify-content-center align-items-center" style="margin-top: 250px; ">
    
-     <div class="container" *ngIf="selectedProduct">
+     <div class="container" *ngIf="selectedFurnitureType">
         <div class="row my-5">
             <div class="col-">
-                <h1 class="text-center fw-bold">{{selectedProduct.name}}</h1>
+                <h1 class="text-center fw-bold">{{selectedFurnitureType.name}}</h1>
                
             </div>
         </div>
 
       <div class="row justify-content-center">
-        <div *ngFor="let part of parts" class="col-xl-3 col-lg-3 col-xxl-3 mb-4 col-sm-12  d-flex flex-wrap">
+        <div *ngFor="let part of selectedFurnitureType.parts" class="col-xl-3 col-lg-3 col-xxl-3 mb-4 col-sm-12  d-flex flex-wrap">
           
-          <app-shop-cards [product]="part"  style="cursor: pointer;" (click)="goTopartsProsuct(part.id)"></app-shop-cards>
+          <app-shop-cards [product]="part"  style="cursor: pointer;" (click)="onPartSelect(part.id)"></app-shop-cards>
 
         </div>
       </div>
     </div> 
 
     
-    <div class="container" *ngIf="!selectedProduct">
-      <p class="text-center my-3 fs-5">Select a product to see its details.</p>
+    <div class="container" *ngIf="!selectedFurnitureType">
+      <p class="text-center  pb-4 fs-6 fw-bold">Select a product to see its details.</p>
     </div>
 
   </section>
    
->>>>>>> mo2

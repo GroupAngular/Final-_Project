@@ -1,8 +1,6 @@
-import { Component } from '@angular/core';
-<<<<<<< HEAD
-=======
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
->>>>>>> mo2
+
 
 @Component({
   selector: 'app-wishlist',
@@ -12,33 +10,50 @@ import { ProductsService } from '../../services/products.service';
   styleUrl: './wishlist.component.css'
 })
 export class WishlistComponent {
-<<<<<<< HEAD
 
-=======
-  quantity: number = 0; // Default quantity
 
-  // Increase quantity
-  increaseQuantity(): void {
-    this.quantity++;
-  }
-
-  // Decrease quantity
-  decreaseQuantity(): void {
-      this.quantity--;
-    
-  }
   InfoOfSectionBGSingleProductDetails=[{
-    image:'images/Shop_bg.jpg',
+    image:'images/wishlist.jpg',
     title:'My Wishlist',
     subTitle1:'cart',
     subTitle2:'Wishlist',
 
   }]
 
-  wishlist: any[] = [];
 
-  constructor(private global: ProductsService) {}
+  constructor(public global: ProductsService) {}
+
+  wishlist: any[] = [];
+cart:any[]=[];
+  ngOnInit() {
+    this.wishlist = this.global.getWishlist();
+  }
+    // Remove product from wishlist
+    removeFromWishlist(product: any): void {
+      this.global.removeFromWishlist(product);
+      this.wishlist = this.global.getWishlist();  // Update wishlist
+    }
+
+    addto(product:any){
+      this.global.addToCart(product)
+      this.cart=this.global.getCart()
+    }
+
+    
+    
 
   
->>>>>>> mo2
+  
+
+    // Method to toggle cart status
+    toggleCart(product:any){
+      if (this.global.isInCart(product)) {
+        this.global.removeFromCart(product);
+      } else {
+        this.global.addToCart(product);
+      }
+      this.cart = this.global.getCart();
+    }
+    
+ 
 }
