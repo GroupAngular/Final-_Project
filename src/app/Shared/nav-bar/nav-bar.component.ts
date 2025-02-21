@@ -1,5 +1,8 @@
-import { Component, AfterViewInit } from '@angular/core';
+
+import { Component ,AfterViewInit,Input} from '@angular/core';
+
 import { ProductsService } from '../../services/products.service';
+
 
 
 @Component({
@@ -10,6 +13,9 @@ import { ProductsService } from '../../services/products.service';
   styleUrl: './nav-bar.component.css'
 })
 export class NavBarComponent {
+
+  @Input() isUserPage: boolean = false;  
+
   wishlistCount: number = 0;
   cartCount: number = 0;
 
@@ -41,4 +47,5 @@ export class NavBarComponent {
     const cart = this.global.getCart();
     this.cartCount = cart.length;
   }
+
 }

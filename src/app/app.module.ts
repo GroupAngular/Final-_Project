@@ -44,6 +44,11 @@ import { FormCommentComponent } from './components/form-comment/form-comment.com
 import { FooterComponent } from './Shared/footer/footer.component';
 import { CartService } from './services/cart.service';
 import { ConfirmationComponent } from './Pages/confirmation/confirmation.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { LoginService } from './services/login.service';
+
+
 import { ReturnComponent } from './Pages/return/return.component';
 import { ProfileComponent } from './Pages/profile/profile.component';
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
@@ -55,6 +60,7 @@ import { SalesChartComponent } from './Pages/sales-chart/sales-chart.component';
 
 
  // Import FormsModule
+
 
 @NgModule({
   declarations: [
@@ -74,6 +80,9 @@ import { SalesChartComponent } from './Pages/sales-chart/sales-chart.component';
     TeamMemberCardComponent,
     ProductCardComponent,
     ConfirmationComponent,
+
+   
+
     ShopCardsComponent,
     ShopProductComponent,
     BGSectionComponent,
@@ -99,11 +108,16 @@ import { SalesChartComponent } from './Pages/sales-chart/sales-chart.component';
 
 
         /*===================== after clone need to import start=================================*/
+
   ],
   imports: [
     BrowserModule,
     
     AppRoutingModule,    
+
+   
+   HttpClientModule,
+
     FormsModule, // Add FormsModule to imports
     ReactiveFormsModule
 ,
@@ -117,13 +131,16 @@ ToastrModule.forRoot(), // ToastrModule added
     NgxChartsModule,
 
 
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [CartService ,provideHttpClient()
 ,
     provideAnimations(), // required animations providers
-    provideToastr(), // Toastr providers
+    provideToastr(), // Toastr providers 
+              LoginService
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule {
