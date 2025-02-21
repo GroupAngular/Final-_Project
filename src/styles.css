@@ -7,3 +7,7 @@
 }
 
 *{font-family: 'Roboto';}
+.user-background {
+   background-image: url(../public/images/z.jpg);background-size: cover;background-repeat: no-repeat;
+  }
+ 

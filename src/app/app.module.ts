@@ -20,7 +20,9 @@ import { TeamMemberCardComponent } from './components/cards/team-member-card/tea
 import { ProductCardComponent } from './components/cards/product-card/product-card.component';
 import { CartService } from './services/cart.service';
 import { ConfirmationComponent } from './Pages/confirmation/confirmation.component';
- // Import FormsModule
+import { HttpClientModule } from '@angular/common/http';
+import { LoginService } from './services/login.service';
+
 
 @NgModule({
   declarations: [
@@ -39,17 +41,19 @@ import { ConfirmationComponent } from './Pages/confirmation/confirmation.compone
     CheckoutComponent,
     TeamMemberCardComponent,
     ProductCardComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+   
   ],
   imports: [
     BrowserModule,
     
     AppRoutingModule,    
-    FormsModule, // Add FormsModule to imports
-    ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
+   HttpClientModule
 
   ],
-  providers: [CartService],
+  providers: [CartService,LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

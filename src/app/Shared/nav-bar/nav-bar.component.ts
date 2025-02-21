@@ -1,4 +1,4 @@
-import { Component ,AfterViewInit} from '@angular/core';
+import { Component ,AfterViewInit,Input} from '@angular/core';
 
 
 @Component({
@@ -9,4 +9,5 @@ import { Component ,AfterViewInit} from '@angular/core';
   styleUrl: './nav-bar.component.css'
 })
 export class NavBarComponent {
+  @Input() isUserPage: boolean = false;  
 }
