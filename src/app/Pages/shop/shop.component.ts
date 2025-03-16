@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 
 import { ProductsService } from '../../services/products.service';
 import { Router } from '@angular/router';
-import { ProductsService } from '../../services/products.service';
-import { Router } from '@angular/router';
 
 
 
