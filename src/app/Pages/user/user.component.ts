@@ -17,14 +17,18 @@ export class UserComponent implements OnInit, OnDestroy {
    password : "",
    confirmPassword:""
  }
- handlesubmit(form:NgForm){
-   if(form.valid){
-     this.log.login(this.model).subscribe((res: any)=>{
-       console.log(res)
-       this.router.navigateByUrl('/terms')
-     })
-         }
- }
+ nameError: string = "";
+  emailError: string = "";
+  passwordError: string = "";
+  confirmPasswordError: string = "";
+//  handlesubmit(form:NgForm){
+//    if(form.valid){
+//      this.log.login(this.model).subscribe((res: any)=>{
+//        console.log(res)
+//        this.router.navigateByUrl('/terms')
+//      })
+//          }
+//  }
  
    ngOnInit(): void {
   
@@ -71,6 +75,54 @@ export class UserComponent implements OnInit, OnDestroy {
    alertVisible = false; 
  
    constructor(private router: Router,private log : LoginService) {}
+   validateName() {
+    if (this.model.name.length < 3) {
+      this.nameError = "Name must be at least 3 characters";
+    } else {
+      this.nameError = "";
+    }
+  }
+
+  // دالة للتحقق من البريد الإلكتروني
+  validateEmail() {
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(this.model.email)) {
+      this.emailError = "Please enter a valid email";
+    } else {
+      this.emailError = "";
+    }
+  }
+
+  // دالة للتحقق من كلمة المرور
+  validatePassword() {
+    const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    if (!passwordPattern.test(this.model.password)) {
+      this.passwordError = "Password must be at least 8 characters with letters and numbers";
+    } else {
+      this.passwordError = "";
+    }
+  }
+
+  // دالة للتحقق من تأكيد كلمة المرور
+  validateConfirmPassword() {
+    if (this.model.confirmPassword !== this.model.password) {
+      this.confirmPasswordError = "Passwords do not match";
+    } else {
+      this.confirmPasswordError = "";
+    }
+  }
+
+  // دالة Submit
+  handlesubmit(form: NgForm) {
+    this.validateName();
+    this.validateEmail();
+    this.validatePassword();
+    this.validateConfirmPassword();
+
+ 
+  }
+
+  // دالة لمحاكاة إرسال بريد التفعيل
  
   
    showAlert() {

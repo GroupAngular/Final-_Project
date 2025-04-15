@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-import { ProductsService } from '../../services/products.service';
-import { Router } from '@angular/router';
+import * as productsService from '../../services/products.service';
+import * as router from '@angular/router';
 import { ProductsService } from '../../services/products.service';
 import { Router } from '@angular/router';
 
@@ -20,7 +20,7 @@ import { Router } from '@angular/router';
 
 
 export class ShopComponent {
-  constructor(public global: ProductsService,private router: Router) { global.user = 'Products TYPES' }
+  constructor(public global: productsService.ProductsService,private router: router.Router) { global.user = 'Products TYPES' }
 
   InfoOfSectionBG = [{
     image: 'images/Shop_bg.jpg',
