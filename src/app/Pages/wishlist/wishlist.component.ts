@@ -1,13 +1,13 @@
-<<<<<<< HEAD
-import { Component } from '@angular/core';
+
+
 import * as core from '@angular/core';
-=======
+
 import { Component, EventEmitter, Input, Output } from '@angular/core';
->>>>>>> 08109b855ee4b46ff90010a0e3d5e82a90bd900f
+
 import { ProductsService } from '../../services/products.service';
 
 
-@Component({
+@core.Component({
   selector: 'app-wishlist',
   standalone: false,
   
