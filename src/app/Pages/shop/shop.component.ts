@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 
+<<<<<<< HEAD
 import * as productsService from '../../services/products.service';
 import * as router from '@angular/router';
+=======
+>>>>>>> 08109b855ee4b46ff90010a0e3d5e82a90bd900f
 import { ProductsService } from '../../services/products.service';
 import { Router } from '@angular/router';
 
