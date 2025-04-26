@@ -3,3 +3,10 @@
 cursor: pointer;
 
 }
+.navbar {
+    background-color: #fff;position: relative;top:0
+  }
+  
+  .user-navbar {
+    background-color: #3b5d50;position: relative;top:0
+  }

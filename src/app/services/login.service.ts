@@ -7,5 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
 
+
+  constructor(private http:HttpClient) { }
+  login(obj:any):Observable<any>{
+    return this.http.post
+    ('https://full.faedg.com/api/client/customer_login',obj)
+
+    // ('https://apisinop.cra.ac.th/api/api/Auth/RegisterThenLogin',obj)
+  }
+
  
+
 }

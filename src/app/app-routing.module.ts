@@ -26,7 +26,10 @@ const routes: Routes = [
 ,  {path:"FQA",component:FAQComponent}
 ,  {path:"cart",component:CartComponent}
 ,  {path:"shop",component:ShopComponent}
-,  {path:"shopProduct/:idProduct",component:ShopProductComponent}
+,  {path:"shopProduct/:idProduct",component:ShopProductComponent,
+  runGuardsAndResolvers: 'always', // Ensures guards and resolvers always run
+
+}
 ,  {path:"single-product-page/:id",component:SingleProductPageComponent}
 
 ,  {path:"shopProduct",component:ShopProductComponent}

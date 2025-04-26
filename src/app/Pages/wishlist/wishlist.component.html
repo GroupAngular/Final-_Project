@@ -8,7 +8,7 @@
 
 
 
-            <div class="card mb-3  shadow-sm element">
+            <div class="card mb-3  shadow-lg border-0  element">
 
                 <div class="card-body ">
                     <table class="table align-items-center">
@@ -20,48 +20,38 @@
 
                                 <th scope="col" class="">Price</th>
                                 <th scope="col" class="">Stock Status</th>
-                                <th scope="col" class="">Quantity</th>
-                                <th scope="col" class=""></th>
                                 <th scope="col" class=""></th>
 
 
                             </tr>
                         </thead>
-                        <!-- <tbody *ngIf="wishlist.length === 0"> -->
-                            <tbody>
-                            <!-- <p>Your wishlist is empty.</p> -->
-                            <tr class="align-items-center justify-content-center" >
-                                <th scope="row"> <a href="#"><i class="fa-solid fa-trash-can text-dark"
+                        <tbody >
+                            <tr  *ngIf="wishlist.length === 0"><th colspan="7" class="text-center py-4">Your wishlist is empty.</th></tr>
+
+                                <tr class="align-items-center justify-content-center" *ngFor="let product of wishlist">
+                                <th scope="row"> <a (click)="removeFromWishlist(product)" style="cursor: pointer;"><i class="fa-solid fa-trash-can text-dark"
                                             style="font-size: 12px;"></i></a>
                                 </th>
-                                <th scope="col-12 d-flex align-items-center">
-                                        <img src="/images/chair.jpg" class="rounded img-thumbnail" style="width: 70px;"
+                                <th scope="col-12 d-flex align-items-center" routerLink="/single-product-page/{{product.id}}" style="cursor: pointer;">
+                                        <img [src]="product.images[0]" class="rounded img-thumbnail" style="width: 70px;"
                                             alt="Chair Image">
 
                                 </th>
-                                <th scope="col" class="">name</th>
+                                <th scope="col" class="">{{product.name}}</th>
 
-                                <th scope="col">$230</th>
-                                <th scope="col">Stock Status</th>
-                                <th scope="col d-flex w-25">
-
-                                    <div class="input-group input-group-sm w-auto d-inline-flex justify-content-center shadow-sm ">
-                                        <button class="btn  btn-sm" type="button" id="btn-decrease"  (click)="decreaseQuantity()">-</button>
-                                        <input type="text" class="form-control text-center border-0" id="quantity" [value]="quantity"  style="width: 50px;">
-                                        <button class="btn  btn-sm" type="button" id="btn-increase" (click)="increaseQuantity()">+</button>
-                                      </div>
-                                </th>
+                                <th scope="col">${{product.price}}</th>
+                                <th scope="col">{{product.availabilityStatus}}</th>
+                                
                                 <th scope="col">
-                                    <a href="#"> <i class="fa-solid fa-cart-plus fs-5 text-dark "
-                                            routerLink="/cart"></i>
-                                    </a>
-                                </th>
-                                <th scope="col">
-                                    <a>   
-                 <i class="fa-regular fa-heart fs-5" routerLink="/wishlist"></i>
-                                    </a>
-                                </th>
+                                    <ul class="d-flex list-unstyled align-items-center justify-content-between">
+                                        <li (click)="toggleCart(product)" [ngClass]="{'text-color': global.isInCart(product)}" style="cursor: pointer;">
+                                          <i class="fa-solid fa-cart-plus"></i>
+                                        </li>
 
+                                     
+                                    </ul>
+                                  </th>
+                                  
                             </tr>
                          
 

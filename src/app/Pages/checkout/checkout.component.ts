@@ -12,6 +12,14 @@ import { CartService } from '../../services/cart.service';
 })
 export class CheckoutComponent {
 
+  InfoOfSectionBGSingleProductDeta=[{
+    image:'images/x.jpg',
+    title:'CheckOut',
+    subTitle1:'Cart',
+    subTitle2:'checkout',
+
+  }]
+
   checkoutForm: FormGroup;
   paymentMethod: string = 'creditCard';
   cartItems: any[] = [];

@@ -1,0 +1,27 @@
+*{background-color: whitesmoke;color: black;}
+.terms-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h2 {
+    color: wheat;
+    text-align: center;
+  }
+  
+  h3 {
+  
+    margin-top: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  p a {
+    color: white;
+  }
+  
