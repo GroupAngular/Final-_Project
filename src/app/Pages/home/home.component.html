@@ -1,55 +1,291 @@
-
 <div class="container">
   
-    <!-- Hero Section -->
-    <header class="position-relative text-center text-white d-flex align-items-center justify-content-center">
-      <!-- Overlay -->
-      <div class="overlay position-absolute"></div>
-    
-      <!-- Hero Content -->
-      <div class="hero-section container">
-        <h1 class="display-4 fw-bold">Modern Furniture for Every Room</h1>
-        <p class="lead">Discover stylish furniture to elevate your space.</p>
-        <a routerLink="/Home" class="btn btn-warning btn-lg mt-3">Shop Now</a>
+  <!-- Hero Section -->
+  <header class="position-relative text-center text-white d-flex align-items-center justify-content-center">
+    <!-- Overlay -->
+    <div class="overlay position-absolute"></div>
+  
+    <!-- Hero Content -->
+    <div class="hero-section container">
+      <h1 class="display-4 fw-bold">Modern Furniture for Every Room</h1>
+      <p class="lead">Discover stylish furniture to elevate your space.</p>
+      <a routerLink="/Home" class="btn btn-warning btn-lg mt-3">Shop Now</a>
+    </div>
+  </header>
+
+  <!-- ===============Products Card Start=================== -->
+  <section class="mt-5">
+    <div class="row d-flex justify-content-center">
+      <div
+        class="col-12 col-md-6 col-xl-4 d-flex justify-content-center align-items-center flex-wrap"
+        *ngFor="let singleProduct of productsComponents"
+      >
+        <app-product-card
+          [imageSrc]="singleProduct.imageSrc"
+          [productName]="singleProduct.productName"
+        ></app-product-card>
       </div>
-    </header>
+    </div>
+  </section>
+  <!-- ===============Products Card End=================== -->
 
-
-    <!-- ===============Products card start=================== -->
-    <section class=" mt-5">
-      <div class="row d-flex justify-content-center ">
-        <div
-          class="col-12 col-md-6 col-xl-4 d-flex justify-content-center align-items-center flex-wrap"
-          *ngFor="let singleProduct of productsComponents"
+  <!-- Products Section -->
+<section id="products" class="py-5 bg-light">
+  <div class="container">
+    <h3 class="text-center mb-5 fw-bold">Shop Our Products</h3>
+    
+    <!-- Price Filter and Sort Controls -->
+    <div class="row mb-4">
+      <div class="col-md-6 mb-3">
+        <label for="minPrice" class="form-label fw-semibold">Min Price</label>
+        <input 
+          type="number" 
+          id="minPrice" 
+          class="form-control" 
+          [(ngModel)]="minPrice" 
+          (ngModelChange)="updatePriceFilter(minPrice, maxPrice)"
+          placeholder="0"
+        />
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="maxPrice" class="form-label fw-semibold">Max Price</label>
+        <input 
+          type="number" 
+          id="maxPrice" 
+          class="form-control" 
+          [(ngModel)]="maxPrice" 
+          (ngModelChange)="updatePriceFilter(minPrice, maxPrice)"
+          placeholder="5000"
+        />
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col-md-12 text-center">
+        <button 
+          class="btn btn-outline-warning me-2 px-4 py-2" 
+          (click)="updateSortOrder('asc')"
         >
-          <app-product-card
-            [imageSrc]="singleProduct.imageSrc"
-            [productName]="singleProduct.productName"
-          ></app-product-card>
+          Low to High
+        </button>
+        <button 
+          class="btn btn-outline-warning me-2 px-4 py-2" 
+          (click)="updateSortOrder('desc')"
+        >
+          High to Low
+        </button>
+        <button 
+          class="btn btn-outline-warning px-4 py-2" 
+          (click)="updateSortOrder('none')"
+        >
+          Reset Sort
+        </button>
+      </div>
+    </div>
+
+    <!-- Product Cards -->
+    <div class="row g-4">
+      <div class="col-sm-6 col-md-4 col-lg-4" *ngFor="let product of sortProducts()">
+        <div class="card h-100 border-0 shadow-sm product-card">
+          <img [src]="product.image" class="card-img-top" [alt]="product.name" />
+          <div class="card-body text-center">
+            <h5 class="card-title fw-semibold">{{ product.name }}</h5>
+            <p class="card-text text-muted mb-2">{{ product.price | currency }}</p>
+            <p class="card-text small text-muted">{{ product.description }}</p>
+            <button 
+              class="btn btn-warning btn-sm px-4" 
+              (click)="addToCart(product)"
+            >
+              Add to Cart
+            </button>
+          </div>
         </div>
       </div>
-    </section>
-    <!-- ===============Products card end=================== -->
-  
-    <!-- Products Section -->
-    <section id="products" class="py-5">
-      <div class="container">
-        <h3 class="text-center mb-4">Shop Our Products</h3>
-        <div class="row g-4">
-          <!-- Product Card -->
-          <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let product of products">
-            <div class="card h-100">
-              <img [src]="product.image" class="card-img-top" [alt]="product.name" />
-              <div class="card-body text-center">
-                <h5 class="card-title">{{ product.name }}</h5>
-                <p class="card-text text-muted">{{ product.price | currency }}</p>
-                <a routerLink="/cart" class="btn  btn-sm  btn-warning">Add to Cart</a>
-              </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ========== Start Featured Collection Section ========== -->
+  <section class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-4">Featured Collection</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <img src="https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&w=600" class="img-fluid rounded-4 shadow-sm" alt="Modern Living Room">
+          <h5 class="mt-3">Modern Living Room</h5>
+        </div>
+        <div class="col-md-4">
+          <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=600" class="img-fluid rounded-4 shadow-sm" alt="Cozy Bedroom">
+          <h5 class="mt-3">Cozy Bedroom</h5>
+        </div>
+        <div class="col-md-4">
+          <img src="https://images.pexels.com/photos/271743/pexels-photo-271743.jpeg?auto=compress&cs=tinysrgb&w=600" class="img-fluid rounded-4 shadow-sm" alt="Elegant Dining Room">
+          <h5 class="mt-3">Elegant Dining Room</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========== End Featured Collection Section ========== -->
+
+  <!-- ========== Start Why Choose Us Section ========== -->
+  <section class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-4">Why Choose Us</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <i class="bi bi-shield-check fs-1 text-warning"></i>
+          <h5 class="mt-3">Premium Quality</h5>
+          <p>Our furniture is crafted with the highest standards to ensure durability and style.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="bi bi-truck fs-1 text-warning"></i>
+          <h5 class="mt-3">Free Shipping</h5>
+          <p>Enjoy free and fast delivery on all orders, straight to your doorstep.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="bi bi-headset fs-1 text-warning"></i>
+          <h5 class="mt-3">24/7 Support</h5>
+          <p>Our team is here to assist you anytime with all your needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========== End Why Choose Us Section ========== -->
+
+  <!-- ========== Start Shop By Room Section ========== -->
+  <section class="py-5 bg-secondary text-white">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-4">Shop by Room</h2>
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <img src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=600" class="img-fluid rounded-3" alt="Living Room">
+          <p class="mt-2">Living Room</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg?auto=compress&cs=tinysrgb&w=600" class="img-fluid rounded-3" alt="Bedroom">
+          <p class="mt-2">Bedroom</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600" class="img-fluid rounded-3" alt="Office">
+          <p class="mt-2">Office</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="https://images.pexels.com/photos/210604/pexels-photo-210604.jpeg?auto=compress&cs=tinysrgb&w=600" class="img-fluid rounded-3" alt="Outdoor">
+          <p class="mt-2">Outdoor</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========== End Shop By Room Section ========== -->
+
+  <!-- ========== Start New Arrivals Section ========== -->
+  <section class="py-5 bg-white">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-4">New Arrivals</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=600" class="img-fluid rounded-4 shadow" alt="New Sofa">
+        </div>
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+          <div>
+            <h3 class="mb-3">Stylish New Sofa</h3>
+            <p class="lead">Discover our latest comfortable and modern sofas to complete your dream home.</p>
+            <a routerLink="/products" class="btn btn-warning btn-lg mt-3">Shop Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========== End New Arrivals Section ========== -->
+
+  <!-- ========== Start Design Tips Section ========== -->
+  <section class="py-5 bg-white">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-4">Design Tips & Inspiration</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <img src="https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?auto=compress&cs=tinysrgb&w=600" class="img-fluid rounded-4 shadow-sm" alt="Design Tip 1">
+          <h5 class="mt-3">Choosing the Perfect Sofa</h5>
+          <p>Learn how to pick a sofa that fits your style and space.</p>
+          <a routerLink="/blog" class="btn btn-outline-warning btn-sm">Read More</a>
+        </div>
+        <div class="col-md-4">
+          <img src="https://images.pexels.com/photos/5998045/pexels-photo-5998045.jpeg?auto=compress&cs=tinysrgb&w=600" class="img-fluid rounded-4 shadow-sm" alt="Design Tip 2">
+          <h5 class="mt-3">Small Space Solutions</h5>
+          <p>Maximize your space with our expert tips for small rooms.</p>
+          <a routerLink="/blog" class="btn btn-outline-warning btn-sm">Read More</a>
+        </div>
+        <div class="col-md-4">
+          <img src="https://images.pexels.com/photos/5824908/pexels-photo-5824908.jpeg?auto=compress&cs=tinysrgb&w=600" class="img-fluid rounded-4 shadow-sm" alt="Design Tip 3">
+          <h5 class="mt-3">Mixing Colors & Textures</h5>
+          <p>Create a cohesive look with our guide to color and texture.</p>
+          <a routerLink="/blog" class="btn btn-outline-warning btn-sm">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========== End Design Tips Section ========== -->
+
+  <!-- ========== Start Best Sellers Section ========== -->
+  <section class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-4">Best Sellers</h2>
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <img src="https://images.pexels.com/photos/2762247/pexels-photo-2762247.jpeg?auto=compress&cs=tinysrgb&w=600" class="img-fluid rounded-4" alt="Luxury Sofa">
+          <h6 class="mt-2">Luxury Sofa</h6>
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&w=600" class="img-fluid rounded-4" alt="Top Seller 2">
+          <h6 class="mt-2">Wooden Bed</h6>
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="https://images.pexels.com/photos/6585762/pexels-photo-6585762.jpeg?auto=compress&cs=tinysrgb&w=600" class="img-fluid rounded-4" alt="Top Seller 3">
+          <h6 class="mt-2">Dining Set</h6>
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&w=600" class="img-fluid rounded-4" alt="Top Seller 4">
+          <h6 class="mt-2">Office Chair</h6>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========== End Best Sellers Section ========== -->
+
+  <!-- ========== Start Customer Reviews Section ========== -->
+  <section class="py-5 bg-white">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-4">What Our Customers Say</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <p class="card-text">"The sofa I bought is stunning and so comfortable! Delivery was fast, and the quality exceeded my expectations."</p>
+              <h6 class="mt-3">Sarah M.</h6>
+              <p class="text-muted">Verified Buyer</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <p class="card-text">"Amazing dining set! It transformed our home, and the customer service was top-notch."</p>
+              <h6 class="mt-3">Ahmed K.</h6>
+              <p class="text-muted">Verified Buyer</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <p class="card-text">"The office chair is perfect for long work hours. Stylish and ergonomic!"</p>
+              <h6 class="mt-3">Laila S.</h6>
+              <p class="text-muted">Verified Buyer</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  
-  </div>
+    </div>
+  </section>
+  <!-- ========== End Customer Reviews Section ========== -->
 
+</div>

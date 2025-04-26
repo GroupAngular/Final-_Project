@@ -1,52 +1,38 @@
-
-/* General start */
-:root{
-  --primary-color: #3b5d50; /* Main color */
-  --secondary-color: #d1c4a7; /* Accent color */
-  --text-color: #ffffff; /* White text */
-  --dark-text-color: #333333; /* Dark text */
-  --bg-color-blue:#A0B9BF;
+/* ========================= General Styles ========================= */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #f8f9fa;
 }
 
-.btn-color-main{
-  background-color: var(--primary-color);
-
+.container {
+  max-width: 1320px;
 }
-/* General END */
 
-
-
-
-/* Header styles */
+/* ========================= Hero Section ========================= */
 header {
-  height: 80vh; /* Full screen height */
-  background: url('https://dkq2tfmdsh9ss.cloudfront.net/sliders/kbUdpdYTht72JgW0YVZPHxFZAGTyiFJBjq8RQqn7.webp') no-repeat center center/cover; /* Add your image here */
-  position: relative;
-  overflow: hidden;
+  height: 80vh;
+  background: url('https://images.pexels.com/photos/2343468/pexels-photo-2343468.jpeg?auto=compress&cs=tinysrgb&w=1200') no-repeat center center/cover;
 }
 
-/* Overlay styles */
 .overlay {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0); /* Semi-transparent black */
-  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1;
 }
 
-/* Hero Section styles */
 .hero-section {
-  z-index: 2; /* Ensure content is above the overlay */
-  color: #fff;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 2;
 }
 
 .hero-section h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-section p {
@@ -54,82 +40,332 @@ header {
   margin-bottom: 1.5rem;
 }
 
-.hero-section a {
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 1px;
-  color: var(--dark-text-color);
-  background-color: var(--text-color);
-  border: none;
-  padding: 0.5rem 10rem;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+.hero-section .btn-warning {
+  border-radius: 25px;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.hero-section a:hover {
-  background-color: var(--primary-color);
+.hero-section .btn-warning:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================= Products Card Section ========================= */
+section.mt-5 .card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+section.mt-5 .card:hover {
+  transform: translateY(-5px);
+}
+
+section.mt-5 .card img {
+  object-fit: cover;
+  height: 250px;
+}
+
+/* ========================= Shop Our Products Section ========================= */
+#products {
+  background-color: #ffffff;
+  padding: 4rem 0;
+}
+
+#products h3 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #222;
+}
+
+#products .form-label {
+  font-weight: 500;
+  color: #444;
+}
+
+#products .form-control {
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+  padding: 0.75rem;
+}
+
+#products .btn-outline-warning {
+  border-radius: 20px;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#products .btn-outline-warning:hover {
+  background-color: #ffc107;
   color: #fff;
 }
 
+#products .product-card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-/* Hero sectio ends */
-/* Header */
-header {
-    background-color: #3b5d50; /* Custom primary color */
+#products .product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+#products .product-card img {
+  object-fit: cover;
+  height: 220px;
+}
+
+#products .product-card .card-body {
+  padding: 1.5rem;
+}
+
+#products .product-card .card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #222;
+}
+
+#products .product-card .card-text {
+  font-size: 0.9rem;
+}
+
+#products .product-card .btn-warning {
+  border-radius: 20px;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+#products .product-card .btn-warning:hover {
+  transform: translateY(-2px);
+}
+
+/* ========================= Featured Collection Section ========================= */
+section.bg-light h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+}
+
+section.bg-light .img-fluid {
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+section.bg-light .img-fluid:hover {
+  transform: scale(1.05);
+}
+
+section.bg-light h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ========================= Why Choose Us Section ========================= */
+section.bg-light .bi {
+  color: #ffc107;
+  transition: transform 0.3s ease;
+}
+
+section.bg-light .bi:hover {
+  transform: scale(1.2);
+}
+
+section.bg-light h5 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #222;
+}
+
+section.bg-light p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ========================= Shop By Room Section ========================= */
+section.bg-secondary {
+  background-color: #343a40 !important;
+}
+
+section.bg-secondary h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+section.bg-secondary .img-fluid {
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+section.bg-secondary .img-fluid:hover {
+  transform: scale(1.05);
+}
+
+section.bg-secondary p {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* ========================= New Arrivals Section ========================= */
+section.bg-white h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+}
+
+section.bg-white .img-fluid {
+  border-radius: 15px;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+section.bg-white h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+section.bg-white .btn-warning {
+  border-radius: 25px;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+section.bg-white .btn-warning:hover {
+  transform: translateY(-3px);
+}
+
+/* ========================= Design Tips Section ========================= */
+section.bg-white .img-fluid {
+  border-radius: 15px;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+section.bg-white .img-fluid:hover {
+  transform: scale(1.05);
+}
+
+section.bg-white h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+section.bg-white p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+section.bg-white .btn-outline-warning {
+  border-radius: 20px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+section.bg-white .btn-outline-warning:hover {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+/* ========================= Best Sellers Section ========================= */
+section.bg-light .img-fluid {
+  border-radius: 15px;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+section.bg-light .img-fluid:hover {
+  transform: scale(1.05);
+}
+
+section.bg-light h6 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ========================= Customer Reviews Section ========================= */
+section.bg-white .card {
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+section.bg-white .card:hover {
+  transform: translateY(-5px);
+}
+
+section.bg-white .card-body {
+  padding: 1.5rem;
+}
+
+section.bg-white .card-text {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+section.bg-white h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+section.bg-white .text-muted {
+  font-size: 0.85rem;
+}
+
+/* ========================= Responsive Design ========================= */
+@media (max-width: 768px) {
+  header {
+    height: 60vh;
   }
-  
-  header h1 {
-    margin: 0;
-  }
-  
-  header nav a {
-    font-size: 0.9rem;
-    text-decoration: none;
-  }
-  
-  /* Hero Section */
-  .hero {
-    background: url('/images/chair.jpg') no-repeat center center/cover;
-    color: white;
-    padding: 5rem 0;
-  }
-  
-  .hero h2 {
+
+  .hero-section h1 {
     font-size: 2.5rem;
-    margin-bottom: 1rem;
   }
-  
-  .hero p {
-    font-size: 1.2rem;
-  }
-  
-  /* Products */
-  #products .card {
-    border: none;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  #products .card:hover {
-    transform: translateY(-5px);
-  }
-  
-  #products .card img {
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  #products .card-title {
+
+  .hero-section p {
     font-size: 1rem;
-    margin: 0.5rem 0;
   }
-  
-  #products .card-text {
-    font-size: 0.9rem;
+
+  #products .product-card img {
+    height: 180px;
   }
-  
-  /* Footer */
-  footer {
-    background-color: #333;
-    color: #aaa;
+
+  section.bg-white .img-fluid {
+    height: 150px;
   }
-  
+
+  section.bg-light .img-fluid {
+    height: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  #products h3 {
+    font-size: 1.75rem;
+  }
+
+  section.bg-light h2,
+  section.bg-secondary h2,
+  section.bg-white h2 {
+    font-size: 1.75rem;
+  }
+
+  #products .btn-outline-warning {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
